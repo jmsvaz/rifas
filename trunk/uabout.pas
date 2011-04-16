@@ -1,0 +1,116 @@
+{
+This file is part of Rifas - a raffle generator program.
+Copyright (C) 2011 João Marcelo S. Vaz
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}
+
+unit uAbout;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls;
+
+type
+
+  { TfmAbout }
+
+TfmAbout = class(TForm)
+    btOK: TButton;
+    btLicense: TButton;
+    imIcon: TImage;
+    lbCopyright: TLabel;
+    lbHomepage: TLabel;
+    lbTitle: TLabel;
+    mmInfo: TMemo;
+    pnAboutBox: TPanel;
+    procedure btLicenseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+procedure FormShow(Sender: TObject);
+    procedure lbHomepageClick(Sender: TObject);
+    procedure lbTitleDblClick(Sender: TObject);
+  private
+    { private declarations }
+      LicenseFile: string;
+      ApplicationVersion: string;
+      Target: string;
+      BuildDate: string;
+      CompiledWith: string;
+  public
+    { public declarations }
+  end; 
+
+var
+  fmAbout: TfmAbout;
+
+implementation
+
+uses LCLIntf, uStrings, VersionInfo;
+
+{$R *.lfm}
+
+{ TfmAbout }
+
+procedure TfmAbout.FormCreate(Sender: TObject);
+var
+  PI: TProductInfo;
+begin
+  LicenseFile:= ExtractFilePath(Application.ExeName) + 'license.txt';
+  PI:= TProductInfo.Create;
+  try
+    ApplicationVersion:= Format('%d.%d.%d', [PI.FileVersion.MajorVersion, PI.FileVersion.MinorVersion, PI.FileVersion.Release]);
+    Target:= PI.CPU + '-' + PI.OS + '-' + PI.WidgetSet;
+    BuildDate:= DateToStr(PI.BuildDate);
+    CompiledWith:= 'FPC v' + VersionInfoToString(PI.FPCVersion)  + ' / LCL v' + VersionInfoToString(pi.LCLVersion)
+  finally
+    PI.Free;
+  end;
+end;
+
+procedure TfmAbout.FormShow(Sender: TObject);
+begin
+  btLicense.Enabled:= FileExists(LicenseFile);
+  Caption:= Format(sAboutDialogCaption,[Application.Title]);
+  lbTitle.Caption:= Format('%s %s', [Application.Title, ApplicationVersion]);
+  imIcon.Picture.Assign(Application.Icon);
+  lbCopyright.Caption:=  'Copyright © 2011 João Marcelo S. Vaz';
+  lbHomepage.Caption:= 'http://rifas.sourceforge.net/';
+  mmInfo.Lines.Add(sLicenseIntro);
+  mmInfo.Lines.Add('');
+  mmInfo.Lines.Add(sAsIs);
+end;
+
+procedure TfmAbout.btLicenseClick(Sender: TObject);
+begin
+  OpenDocument(LicenseFile);
+end;
+
+procedure TfmAbout.lbHomepageClick(Sender: TObject);
+begin
+  OpenURL(lbHomepage.Caption);
+end;
+
+procedure TfmAbout.lbTitleDblClick(Sender: TObject);
+begin
+  ShowMessage(Format(sProgramInfo,[lbTitle.Caption,Target,BuildDate,CompiledWith]));
+end;
+
+end.
+
+
+
