@@ -1,7 +1,7 @@
 object fmAbout: TfmAbout
-  Left = 319
+  Left = 321
   Height = 452
-  Top = 280
+  Top = 129
   Width = 556
   BorderStyle = bsDialog
   Caption = '[dont translate]'
@@ -20,14 +20,14 @@ object fmAbout: TfmAbout
     BevelOuter = bvNone
     BorderWidth = 1
     BorderStyle = bsSingle
-    ClientHeight = 378
-    ClientWidth = 524
+    ClientHeight = 376
+    ClientWidth = 522
     TabOrder = 0
     object lbTitle: TLabel
       Left = 0
       Height = 26
       Top = 120
-      Width = 524
+      Width = 522
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       AutoSize = False
@@ -38,7 +38,7 @@ object fmAbout: TfmAbout
       OnDblClick = lbTitleDblClick
     end
     object imIcon: TImage
-      Left = 216
+      Left = 215
       Height = 90
       Top = 8
       Width = 90
@@ -48,22 +48,25 @@ object fmAbout: TfmAbout
     end
     object mmInfo: TMemo
       Left = 17
-      Height = 135
+      Height = 133
       Top = 230
-      Width = 488
+      Width = 486
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight, akBottom]
-      Font.Height = -13
+      Font.Height = -12
+      HideSelection = False
       ParentFont = False
       ReadOnly = True
       ScrollBars = ssAutoVertical
       TabOrder = 0
+      TabStop = False
+      WantReturns = False
     end
     object lbCopyright: TLabel
       Left = 0
       Height = 18
       Top = 168
-      Width = 524
+      Width = 522
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       AutoSize = False
@@ -77,7 +80,7 @@ object fmAbout: TfmAbout
       Left = 0
       Height = 18
       Top = 198
-      Width = 524
+      Width = 522
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       AutoSize = False

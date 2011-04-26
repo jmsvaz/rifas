@@ -24,7 +24,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn, Spin, LR_Class, LR_DSet, lr_e_pdf;
+  ExtCtrls, EditBtn, Spin, LR_Class, LR_DSet, lr_e_pdf, DefaultTranslator;
 
 type
 
