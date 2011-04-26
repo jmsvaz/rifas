@@ -1,7 +1,7 @@
 object fmMain: TfmMain
-  Left = 323
+  Left = 352
   Height = 684
-  Top = 193
+  Top = 84
   Width = 623
   Caption = '[dont translate]'
   ClientHeight = 684
@@ -24,7 +24,7 @@ object fmMain: TfmMain
     Top = 16
     Width = 585
     Anchors = [akTop, akLeft, akRight, akBottom]
-    ClientHeight = 580
+    ClientHeight = 566
     ClientWidth = 581
     TabOrder = 0
     object gbRaffle: TGroupBox
@@ -33,36 +33,36 @@ object fmMain: TfmMain
       Top = 254
       Width = 312
       Caption = ' Sorteio  '
-      ClientHeight = 129
+      ClientHeight = 130
       ClientWidth = 308
       TabOrder = 2
       object edPlace: TLabeledEdit
         Left = 12
-        Height = 27
+        Height = 23
         Top = 87
         Width = 282
         Anchors = [akTop, akLeft, akRight]
         EditLabel.AnchorSideLeft.Control = edPlace
         EditLabel.AnchorSideBottom.Control = edPlace
         EditLabel.Left = 12
-        EditLabel.Height = 18
-        EditLabel.Top = 66
-        EditLabel.Width = 41
+        EditLabel.Height = 16
+        EditLabel.Top = 68
+        EditLabel.Width = 32
         EditLabel.Caption = 'Local:'
         EditLabel.ParentColor = False
         TabOrder = 1
       end
       object lbDate: TLabel
         Left = 12
-        Height = 18
+        Height = 16
         Top = 6
-        Width = 38
+        Width = 28
         Caption = 'Data:'
         ParentColor = False
       end
       object edDate: TDateEdit
         Left = 12
-        Height = 27
+        Height = 23
         Top = 31
         Width = 256
         CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
@@ -121,36 +121,36 @@ object fmMain: TfmMain
       Width = 552
       Anchors = [akTop, akLeft, akRight]
       Caption = ' Prêmio  '
-      ClientHeight = 142
+      ClientHeight = 143
       ClientWidth = 548
       TabOrder = 1
       object edAward: TLabeledEdit
         Left = 12
-        Height = 27
+        Height = 23
         Top = 31
         Width = 400
         Anchors = [akTop, akLeft, akRight]
         EditLabel.AnchorSideLeft.Control = edAward
         EditLabel.AnchorSideBottom.Control = edAward
         EditLabel.Left = 12
-        EditLabel.Height = 18
-        EditLabel.Top = 10
-        EditLabel.Width = 54
+        EditLabel.Height = 16
+        EditLabel.Top = 12
+        EditLabel.Width = 42
         EditLabel.Caption = 'Prêmio:'
         EditLabel.ParentColor = False
         TabOrder = 0
       end
       object lbImage: TLabel
         Left = 12
-        Height = 18
+        Height = 16
         Top = 71
-        Width = 60
+        Width = 48
         Caption = 'Imagem:'
         ParentColor = False
       end
       object edImageFile: TFileNameEdit
         Left = 12
-        Height = 27
+        Height = 23
         Top = 95
         Width = 376
         OnAcceptFileName = edImageFileAcceptFileName
@@ -172,13 +172,13 @@ object fmMain: TfmMain
         BevelOuter = bvNone
         BorderWidth = 1
         BorderStyle = bsSingle
-        ClientHeight = 106
-        ClientWidth = 106
+        ClientHeight = 104
+        ClientWidth = 104
         Color = clWhite
         ParentColor = False
         TabOrder = 2
         object imAward: TImage
-          Left = -2
+          Left = -4
           Height = 108
           Top = 0
           Width = 108
@@ -191,17 +191,17 @@ object fmMain: TfmMain
     end
     object gbTickets: TGroupBox
       Left = 14
-      Height = 148
+      Height = 134
       Top = 414
       Width = 312
       Anchors = [akTop, akLeft, akBottom]
       Caption = ' Rifas  '
-      ClientHeight = 129
+      ClientHeight = 116
       ClientWidth = 308
       TabOrder = 3
       object edPrice: TFloatSpinEdit
         Left = 12
-        Height = 27
+        Height = 23
         Top = 30
         Width = 134
         Increment = 1
@@ -212,16 +212,16 @@ object fmMain: TfmMain
       end
       object lbPrice: TLabel
         Left = 15
-        Height = 18
+        Height = 16
         Top = 6
-        Width = 42
+        Width = 31
         Caption = 'Valor:'
         FocusControl = edPrice
         ParentColor = False
       end
       object edLastNumber: TSpinEdit
         Left = 158
-        Height = 27
+        Height = 23
         Top = 84
         Width = 134
         MaxValue = 100000000
@@ -231,7 +231,7 @@ object fmMain: TfmMain
       end
       object edFirstNumber: TSpinEdit
         Left = 12
-        Height = 27
+        Height = 23
         Top = 84
         Width = 134
         MaxValue = 100000000
@@ -241,18 +241,18 @@ object fmMain: TfmMain
       end
       object lbFirstNumber: TLabel
         Left = 15
-        Height = 18
+        Height = 16
         Top = 63
-        Width = 122
+        Width = 96
         Caption = 'Primeiro Número:'
         FocusControl = edFirstNumber
         ParentColor = False
       end
       object lbLastNumber: TLabel
         Left = 160
-        Height = 18
+        Height = 16
         Top = 63
-        Width = 109
+        Width = 87
         Caption = 'Último Número:'
         FocusControl = edLastNumber
         ParentColor = False
@@ -260,33 +260,33 @@ object fmMain: TfmMain
     end
     object edTitle: TLabeledEdit
       Left = 30
-      Height = 27
+      Height = 23
       Top = 38
       Width = 523
       Anchors = [akTop, akLeft, akRight]
       EditLabel.AnchorSideLeft.Control = edTitle
       EditLabel.AnchorSideBottom.Control = edTitle
       EditLabel.Left = 30
-      EditLabel.Height = 18
-      EditLabel.Top = 17
-      EditLabel.Width = 40
+      EditLabel.Height = 16
+      EditLabel.Top = 19
+      EditLabel.Width = 32
       EditLabel.Caption = 'Título'
       EditLabel.ParentColor = False
       TabOrder = 0
     end
     object gbPeople: TGroupBox
       Left = 342
-      Height = 308
+      Height = 294
       Top = 254
       Width = 224
       Anchors = [akTop, akLeft, akRight, akBottom]
       Caption = ' Responsáveis  '
-      ClientHeight = 289
+      ClientHeight = 276
       ClientWidth = 220
       TabOrder = 4
       object mmPeople: TMemo
         Left = 12
-        Height = 252
+        Height = 239
         Top = 19
         Width = 194
         Anchors = [akTop, akLeft, akRight, akBottom]

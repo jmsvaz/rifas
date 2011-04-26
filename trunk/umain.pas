@@ -74,6 +74,9 @@ procedure btCloseClick(Sender: TObject);
     procedure frUserDatasetFirst(Sender: TObject);
     procedure frUserDatasetNext(Sender: TObject);
   private
+    procedure TestIfAwardIsValid;
+    procedure TestIfTicketNumbersAreValid;
+    procedure TestIfTicketsQuantityIsMultiple;
     { private declarations }
   public
     { public declarations }
@@ -98,43 +101,36 @@ begin
   Caption:= Application.Title;
 end;
 
-procedure TfmMain.btCreateClick(Sender: TObject);
-var
-  error: Integer;
+
+procedure TfmMain.TestIfAwardIsValid;
 begin
-  error:= 0;
+  if Length(edAward.Text) <= 0 then
+    raise Exception.Create(sAwardCantBeBlank);
+end;
 
-  //testa se existe prêmio
-  if Length(edAward.Text) < 1 then
-    error:= 1;
-
-  //testa se o número final da rifa é maior do que o inicial
+procedure TfmMain.TestIfTicketNumbersAreValid;
+begin
   if edLastNumber.Value < edFirstNumber.Value then
-    error:= 2;
+    raise Exception.Create(sTicketNumbersInvalid);
+end;
 
-  //testa se a quantidade de rifas é múltiplo da quantidade de responsáveis
-  if mmPeople.Lines.Count > 0 then
-    if ((edLastNumber.Value - edFirstNumber.Value + 1) mod mmPeople.Lines.Count) > 0 then
-      error:= 3;
+procedure TfmMain.TestIfTicketsQuantityIsMultiple;
+begin
+  if ((edLastNumber.Value - edFirstNumber.Value + 1) mod mmPeople.Lines.Count) > 0 then
+    raise Exception.Create(sTicketsQuantityNotMultiple);
+end;
 
-  case error of
-    1:
-      begin
-        ShowMessage(sAwardCantBeBlank);
-        edAward.SetFocus;
-      end;
-    2:
-      begin
-        ShowMessage(sTicketNumbersInvalid);
-        edLastNumber.SetFocus;
-      end;
-    3:
-      begin
-        ShowMessage(sTicketsQuantityNotMultiple);
-        edLastNumber.SetFocus;
-      end;
-    else
-      Generate; // generate the tickets
+procedure TfmMain.btCreateClick(Sender: TObject);
+begin
+  try
+    TestIfAwardIsValid;
+    TestIfTicketNumbersAreValid;
+    if mmPeople.Lines.Count > 0 then
+      TestIfTicketsQuantityIsMultiple;
+    Generate;
+  except
+    on E: Exception do
+      ShowMessage(E.Message);
   end;
 end;
 
@@ -160,8 +156,6 @@ begin
       frReport.Title:= edTitle.Text;
       frReport.ShowPreparedReport;
     end;
-
-
 end;
 
 procedure TfmMain.frReportGetValue(const ParName: String; var ParValue: Variant);
@@ -210,6 +204,7 @@ procedure TfmMain.frUserDatasetNext(Sender: TObject);
 begin
   Inc(Count);
 end;
+
 
 
 end.
