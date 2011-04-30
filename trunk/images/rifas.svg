@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="rifas.svg">
+  <title
+     id="title2988">Rifas icon</title>
+  <defs
+     id="defs2987" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.5"
+     inkscape:cx="32"
+     inkscape:cy="35.818182"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="947"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3788" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Rifas icon</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>João Marcelo S. Vaz</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:date>2011-04-29</dc:date>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+        <dc:description>This is the logo for the Rifas program.</dc:description>
+        <dc:identifier>http://rifas.sourceforge.net</dc:identifier>
+        <dc:source>http://rifas.sourceforge.net</dc:source>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     style="display:inline">
+    <g
+       id="g3873">
+      <path
+         transform="matrix(1.5042735,0,0,1.5042735,89.709399,34.461539)"
+         d="m -17.090908,-1.6363636 a 21.272728,21.272728 0 1 1 -42.545456,0 21.272728,21.272728 0 1 1 42.545456,0 z"
+         sodipodi:ry="21.272728"
+         sodipodi:rx="21.272728"
+         sodipodi:cy="-1.6363636"
+         sodipodi:cx="-38.363636"
+         id="path3871"
+         style="opacity:0.22955975;fill:#bab941;fill-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(2.8459009,0,0,2.7018048,-3.9618396,-17.088412)"
+         d="m 19.454546,13.727273 a 6.818182,7.181818 0 1 1 -13.636364,0 6.818182,7.181818 0 1 1 13.636364,0 z"
+         sodipodi:ry="7.181818"
+         sodipodi:rx="6.818182"
+         sodipodi:cy="13.727273"
+         sodipodi:cx="12.636364"
+         id="path2993"
+         style="fill:#ca2525;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.42996585;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(2.8459009,0,0,2.7018048,-15.96184,6.911589)"
+         d="m 19.454546,13.727273 a 6.818182,7.181818 0 1 1 -13.636364,0 6.818182,7.181818 0 1 1 13.636364,0 z"
+         sodipodi:ry="7.181818"
+         sodipodi:rx="6.818182"
+         sodipodi:cy="13.727273"
+         sodipodi:cx="12.636364"
+         id="path2993-9"
+         style="fill:#302bd3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.42996585;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(2.8459009,0,0,2.7018048,8.0381604,6.9115878)"
+         d="m 19.454546,13.727273 a 6.818182,7.181818 0 1 1 -13.636364,0 6.818182,7.181818 0 1 1 13.636364,0 z"
+         sodipodi:ry="7.181818"
+         sodipodi:rx="6.818182"
+         sodipodi:cy="13.727273"
+         sodipodi:cx="12.636364"
+         id="path2993-3"
+         style="fill:#27cf27;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.42996585;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+    </g>
+  </g>
+</svg>
