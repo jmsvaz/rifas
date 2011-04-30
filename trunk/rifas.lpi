@@ -33,7 +33,7 @@
           <Version Value="10"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)/"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)"/>
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
@@ -205,7 +205,6 @@
         <OverflowChecks Value="True"/>
         <StackChecks Value="True"/>
       </Checks>
-      <VerifyObjMethodCallValidity Value="True"/>
       <TargetOS Value="linux"/>
     </CodeGeneration>
     <Linking>

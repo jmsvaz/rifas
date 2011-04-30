@@ -73,10 +73,10 @@ begin
   LicenseFile:= ExtractFilePath(Application.ExeName) + 'license.txt';
   PI:= TProductInfo.Create;
   try
-    ApplicationVersion:= Format('%d.%d.%d', [PI.FileVersion.MajorVersion, PI.FileVersion.MinorVersion, PI.FileVersion.Release]);
+    ApplicationVersion:= VersionInfo3ToStr(PI.FileVersion);
     Target:= PI.CPU + '-' + PI.OS + '-' + PI.WidgetSet;
     BuildDate:= DateToStr(PI.BuildDate);
-    CompiledWith:= 'FPC v' + VersionInfoToString(PI.FPCVersion)  + ' / LCL v' + VersionInfoToString(pi.LCLVersion)
+    CompiledWith:= 'FPC v' + VersionInfo3ToStr(PI.FPCVersion)  + ' / LCL v' + VersionInfo3ToStr(pi.LCLVersion)
   finally
     PI.Free;
   end;
@@ -87,9 +87,10 @@ begin
   btLicense.Enabled:= FileExists(LicenseFile);
   Caption:= Format(sAboutDialogCaption,[Application.Title]);
   lbTitle.Caption:= Format('%s %s', [Application.Title, ApplicationVersion]);
-  imIcon.Picture.Assign(Application.Icon);
+//  imIcon.Picture.Assign(Application.Icon);
   lbCopyright.Caption:=  'Copyright © 2011 João Marcelo S. Vaz';
   lbHomepage.Caption:= 'http://rifas.sourceforge.net/';
+  mmInfo.Lines.Clear;
   mmInfo.Lines.Add(sLicenseIntro);
   mmInfo.Lines.Add('');
   mmInfo.Lines.Add(sAsIs);

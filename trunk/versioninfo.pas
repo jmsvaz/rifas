@@ -77,18 +77,23 @@ type
     property LCLVersion: TVersionInfo read fLCLVersion;  // Lazarus Component Library version
   end;
 
-  function VersionInfoToString(VI: TVersionInfo): String;
+  function VersionInfoToStr(VI: TVersionInfo): String;
+  function VersionInfo3ToStr(VI: TVersionInfo): String;
 
 implementation
 
 uses
    resource, versiontypes, lclversion, interfacebase;
 
-function VersionInfoToString(VI: TVersionInfo): String;
+function VersionInfoToStr(VI: TVersionInfo): String;
 begin
   Result := Format('%d.%d.%d.%d', [VI.MajorVersion,VI.MinorVersion,VI.Release,VI.Build])
 end;
 
+function VersionInfo3ToStr(VI: TVersionInfo): String;
+begin
+  Result := Format('%d.%d.%d', [VI.MajorVersion,VI.MinorVersion,VI.Release])
+end;
 
 
 { TProductInfo }
