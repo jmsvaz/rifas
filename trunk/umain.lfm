@@ -1,7 +1,7 @@
 object fmMain: TfmMain
-  Left = 352
+  Left = 351
   Height = 684
-  Top = 84
+  Top = 191
   Width = 623
   Caption = '[dont translate]'
   ClientHeight = 684
@@ -9,6 +9,7 @@ object fmMain: TfmMain
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '0.9.31'
+  Visible = True
   object btCreate: TButton
     Left = 376
     Height = 25
@@ -57,7 +58,7 @@ object fmMain: TfmMain
         Left = 12
         Height = 18
         Top = 6
-        Width = 38
+        Width = 37
         Caption = 'Data:'
         ParentColor = False
       end
@@ -145,7 +146,7 @@ object fmMain: TfmMain
         Left = 12
         Height = 18
         Top = 71
-        Width = 60
+        Width = 59
         Caption = 'Imagem:'
         ParentColor = False
       end
@@ -270,8 +271,8 @@ object fmMain: TfmMain
       EditLabel.Left = 30
       EditLabel.Height = 18
       EditLabel.Top = 17
-      EditLabel.Width = 40
-      EditLabel.Caption = 'Título'
+      EditLabel.Width = 96
+      EditLabel.Caption = 'Título [teste1]'
       EditLabel.ParentColor = False
       TabOrder = 0
     end
