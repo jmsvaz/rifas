@@ -23,8 +23,8 @@ unit uMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn, Spin, LR_Class, LR_DSet, lr_e_pdf, DefaultTranslator;
+  Classes, SysUtils, Forms, Dialogs, StdCtrls, ExtCtrls, EditBtn, Spin,
+  LR_Class, LR_DSet, lr_e_pdf, DefaultTranslator, ExtDlgs;
 
 type
 
@@ -36,7 +36,7 @@ TfmMain = class(TForm)
     btClose: TButton;
     edAward: TLabeledEdit;
     edDate: TDateEdit;
-    edImageFile: TFileNameEdit;
+    edImageFile: TEditButton;
     edPlace: TLabeledEdit;
     edPrice: TFloatSpinEdit;
     frReport: TfrReport;
@@ -62,17 +62,21 @@ TfmMain = class(TForm)
     mmPeople: TMemo;
     edLastNumber: TSpinEdit;
     edFirstNumber: TSpinEdit;
+    OpenPictureDialog: TOpenPictureDialog;
     pnImage: TPanel;
     procedure btAboutClick(Sender: TObject);
-procedure btCloseClick(Sender: TObject);
+    procedure btCloseClick(Sender: TObject);
     procedure btCreateClick(Sender: TObject);
-    procedure edImageFileAcceptFileName(Sender: TObject; var Value: String);
+    procedure edImageFileButtonClick(Sender: TObject);
+    procedure edImageFileChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure frReportEnterRect(Memo: TStringList; View: TfrView);
     procedure frReportGetValue(const ParName: String; var ParValue: Variant);
     procedure frUserDatasetCheckEOF(Sender: TObject; var Eof: Boolean);
     procedure frUserDatasetFirst(Sender: TObject);
     procedure frUserDatasetNext(Sender: TObject);
+    procedure imAwardDblClick(Sender: TObject);
+    procedure OpenPictureDialogClose(Sender: TObject);
   private
     procedure TestIfAwardIsValid;
     procedure TestIfTicketNumbersAreValid;
@@ -134,9 +138,27 @@ begin
   end;
 end;
 
-procedure TfmMain.edImageFileAcceptFileName(Sender: TObject; var Value: String);
+procedure TfmMain.edImageFileButtonClick(Sender: TObject);
 begin
-  imAward.Picture.LoadFromFile(Value);
+  OpenPictureDialog.Execute;
+end;
+
+procedure TfmMain.edImageFileChange(Sender: TObject);
+begin
+  if FileExists(edImageFile.Text) then
+    imAward.Picture.LoadFromFile(edImageFile.Text)
+  else
+    imAward.Picture.Clear;
+end;
+
+procedure TfmMain.imAwardDblClick(Sender: TObject);
+begin
+  OpenPictureDialog.Execute;
+end;
+
+procedure TfmMain.OpenPictureDialogClose(Sender: TObject);
+begin
+  edImageFile.Text:= OpenPictureDialog.FileName;
 end;
 
 procedure TfmMain.btCloseClick(Sender: TObject);
@@ -160,6 +182,10 @@ end;
 
 procedure TfmMain.frReportGetValue(const ParName: String; var ParValue: Variant);
 begin
+  if ParName = 'Name' then
+    ParValue:= Format('%s:', [sNameCaption]);
+  if ParName = 'Phone' then
+    ParValue:= Format('%s:', [sPhoneCaption]);
   if ParName = 'Title' then
     ParValue:= edTitle.Text;
   if ParName = 'Award' then
@@ -171,7 +197,8 @@ begin
   if ParName = 'Number' then
     ParValue:= Format('%.*d', [Length(edLastNumber.Text), Count]) ;
   if ParName = 'Price' then
-    ParValue:= Format('%s: %m', [sPriceCaption, edPrice.Value]);
+    //ParValue:= Format('%s: %m', [sPriceCaption, edPrice.Value]);
+    ParValue:= Format('%m', [edPrice.Value]);
   if mmPeople.Lines.Count > 0 then
     if ParName = 'Person' then
       ParValue:= mmPeople.Lines[(Count - edFirstNumber.Value) div ((edLastNumber.Value - edFirstNumber.Value + 1) div mmPeople.Lines.Count)];
@@ -204,8 +231,6 @@ procedure TfmMain.frUserDatasetNext(Sender: TObject);
 begin
   Inc(Count);
 end;
-
-
 
 end.
 

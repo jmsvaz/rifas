@@ -37,6 +37,8 @@ resourcestring
   sTicketNumbersInvalid = 'O número final da rifa deve ser maior ou igual ao número inicial!';
   sTicketsQuantityNotMultiple = 'A quantidade de rifas deve ser múltiplo da quantidade de responsáveis.';
 
+  sNameCaption = 'Nome';
+  sPhoneCaption = 'Tel';
   sDateCaption = 'Data';
   sPlaceCaption = 'Local';
   sPriceCaption = 'Valor';

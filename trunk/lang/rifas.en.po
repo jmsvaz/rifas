@@ -73,8 +73,9 @@ msgid "Local:"
 msgstr "Place:"
 
 #: TFMMAIN.EDTITLE.EDITLABEL.CAPTION
-#| msgid "Título [teste]"
-msgid "Título [teste1]"
+#, fuzzy
+#| msgid "Título [teste1]"
+msgid "Título"
 msgstr "Title"
 
 #: TFMMAIN.GBAWARD.CAPTION
@@ -132,6 +133,14 @@ msgstr "Date"
 #: ustrings.slicenseintro
 msgid "Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation; tanto a versão 3 da Licença como (a seu critério) qualquer versão posterior."
 msgstr "Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation; tanto a versão 3 da Licença como (a seu critério) qualquer versão posterior."
+
+#: ustrings.snamecaption
+msgid "Nome"
+msgstr ""
+
+#: ustrings.sphonecaption
+msgid "Tel"
+msgstr ""
 
 #: ustrings.splacecaption
 msgid "Local"
