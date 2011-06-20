@@ -23,8 +23,8 @@ unit uMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Dialogs, StdCtrls, ExtCtrls, EditBtn, Spin,
-  LR_Class, LR_DSet, lr_e_pdf, DefaultTranslator, ExtDlgs;
+  Classes, SysUtils, Forms, Dialogs, StdCtrls, ExtCtrls, EditBtn, Spin, ExtDlgs,
+  Graphics, LR_Class, LR_DSet, lr_e_pdf, DefaultTranslator;
 
 type
 
@@ -81,6 +81,9 @@ TfmMain = class(TForm)
     procedure TestIfAwardIsValid;
     procedure TestIfTicketNumbersAreValid;
     procedure TestIfTicketsQuantityIsMultiple;
+    procedure LoadImageFile(FileName: string);
+    function GetBitmap(FileName: string): TBitmap;
+    function ResampleBitmap(ABitmap: TBitmap; NewHeight, NewWidth: Integer): TBitmap;
     { private declarations }
   public
     { public declarations }
@@ -124,6 +127,52 @@ begin
     raise Exception.Create(sTicketsQuantityNotMultiple);
 end;
 
+procedure TfmMain.LoadImageFile(FileName: string);
+var
+  Bitmap: TBitmap;
+begin
+  Bitmap:= GetBitmap(FileName);
+  if ((Bitmap.Height > imAward.Height) or (Bitmap.Width > imAward.Width)) then
+    Bitmap:= ResampleBitmap(Bitmap,imAward.Height,imAward.Width);
+  imAward.Picture.Bitmap:= Bitmap;
+
+  // imAward.Picture.LoadFromFile(edImageFile.Text);
+end;
+
+function TfmMain.GetBitmap(FileName: string): TBitmap;
+// code from http://www.efg2.com/Lab/ImageProcessing/AspectRatio.htm
+var
+  Picture: TPicture;
+begin
+  Result := TBitmap.Create;
+  try
+    Picture := TPicture.Create;
+    try
+      Picture.LoadFromFile(Filename);
+      try // Try converting picture to bitmap
+        Result.Assign(Picture.Graphic);
+      except
+        // Picture didn't support conversion to TBitmap.
+        // Draw picture on bitmap instead.
+        Result.Width  := Picture.Graphic.Width;
+        Result.Height := Picture.Graphic.Height;
+        Result.PixelFormat := pf24bit;
+        Result.Canvas.Draw(0, 0, Picture.Graphic);
+      end
+    finally
+      Picture.Free
+    end
+  except
+    Result.Free;
+    raise
+  end
+end;
+
+function TfmMain.ResampleBitmap(ABitmap: TBitmap; NewHeight, NewWidth: Integer): TBitmap;
+begin
+
+end;
+
 procedure TfmMain.btCreateClick(Sender: TObject);
 begin
   try
@@ -146,7 +195,7 @@ end;
 procedure TfmMain.edImageFileChange(Sender: TObject);
 begin
   if FileExists(edImageFile.Text) then
-    imAward.Picture.LoadFromFile(edImageFile.Text)
+    LoadImageFile(edImageFile.Text)
   else
     imAward.Picture.Clear;
 end;
@@ -233,4 +282,45 @@ begin
 end;
 
 end.
+
+{
+//resize algorithm
+
+const
+   maxWidth = 200;
+   maxHeight = 150;
+ var
+   thumbnail : TBitmap;
+   thumbRect : TRect;
+ begin
+   thumbnail := Form1.GetFormImage;    <- get a image
+   try
+     thumbRect.Left := 0;
+     thumbRect.Top := 0;
+
+     //proportional resize
+     if thumbnail.Width > thumbnail.Height then
+     begin
+       thumbRect.Right := maxWidth;
+       thumbRect.Bottom := (maxWidth * thumbnail.Height) div thumbnail.Width;
+     end
+     else
+     begin
+       thumbRect.Bottom := maxHeight;
+       thumbRect.Right := (maxHeight * thumbnail.Width) div thumbnail.Height;
+     end;
+
+     thumbnail.Canvas.StretchDraw(thumbRect, thumbnail) ;
+
+//resize image
+     thumbnail.Width := thumbRect.Right;
+    thumbnail.Height := thumbRect.Bottom;
+
+     //display in a TImage control
+     Image1.Picture.Assign(thumbnail) ;
+   finally
+     thumbnail.Free;
+   end;
+ end;
+}
 
