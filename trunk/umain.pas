@@ -69,8 +69,10 @@ TfmMain = class(TForm)
     procedure btCreateClick(Sender: TObject);
     procedure edImageFileButtonClick(Sender: TObject);
     procedure edImageFileChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure frReportEnterRect(Memo: TStringList; View: TfrView);
+    procedure frReportBeginDoc;
     procedure frReportGetValue(const ParName: String; var ParValue: Variant);
     procedure frUserDatasetCheckEOF(Sender: TObject; var Eof: Boolean);
     procedure frUserDatasetFirst(Sender: TObject);
@@ -78,12 +80,13 @@ TfmMain = class(TForm)
     procedure imAwardDblClick(Sender: TObject);
     procedure OpenPictureDialogClose(Sender: TObject);
   private
+    AwardImage: TBitmap;
+    procedure ClearImage;
     procedure TestIfAwardIsValid;
     procedure TestIfTicketNumbersAreValid;
     procedure TestIfTicketsQuantityIsMultiple;
     procedure LoadImageFile(FileName: string);
-    function GetBitmap(FileName: string): TBitmap;
-    function ResampleBitmap(ABitmap: TBitmap; NewHeight, NewWidth: Integer): TBitmap;
+    function ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
     { private declarations }
   public
     { public declarations }
@@ -96,7 +99,7 @@ var
 
 implementation
 
-uses uStrings, uAbout;
+uses Math, uStrings, uAbout;
 
 {$R *.lfm}
 
@@ -107,7 +110,6 @@ procedure TfmMain.FormShow(Sender: TObject);
 begin
   Caption:= Application.Title;
 end;
-
 
 procedure TfmMain.TestIfAwardIsValid;
 begin
@@ -127,50 +129,89 @@ begin
     raise Exception.Create(sTicketsQuantityNotMultiple);
 end;
 
-procedure TfmMain.LoadImageFile(FileName: string);
-var
-  Bitmap: TBitmap;
+procedure TfmMain.imAwardDblClick(Sender: TObject);
 begin
-  Bitmap:= GetBitmap(FileName);
-  if ((Bitmap.Height > imAward.Height) or (Bitmap.Width > imAward.Width)) then
-    Bitmap:= ResampleBitmap(Bitmap,imAward.Height,imAward.Width);
-  imAward.Picture.Bitmap:= Bitmap;
-
-  // imAward.Picture.LoadFromFile(edImageFile.Text);
+  OpenPictureDialog.Execute;
 end;
 
-function TfmMain.GetBitmap(FileName: string): TBitmap;
-// code from http://www.efg2.com/Lab/ImageProcessing/AspectRatio.htm
+procedure TfmMain.edImageFileButtonClick(Sender: TObject);
+begin
+  OpenPictureDialog.Execute;
+end;
+
+procedure TfmMain.OpenPictureDialogClose(Sender: TObject);
+begin
+  edImageFile.Text:= OpenPictureDialog.FileName;
+end;
+
+
+procedure TfmMain.edImageFileChange(Sender: TObject);
+begin
+  if FileExists(edImageFile.Text) then
+    LoadImageFile(edImageFile.Text)
+  else
+    ClearImage;
+end;
+
+procedure TfmMain.LoadImageFile(FileName: string);
 var
   Picture: TPicture;
 begin
-  Result := TBitmap.Create;
+  Picture := TPicture.Create;
   try
-    Picture := TPicture.Create;
-    try
-      Picture.LoadFromFile(Filename);
-      try // Try converting picture to bitmap
-        Result.Assign(Picture.Graphic);
-      except
-        // Picture didn't support conversion to TBitmap.
-        // Draw picture on bitmap instead.
-        Result.Width  := Picture.Graphic.Width;
-        Result.Height := Picture.Graphic.Height;
-        Result.PixelFormat := pf24bit;
-        Result.Canvas.Draw(0, 0, Picture.Graphic);
-      end
-    finally
-      Picture.Free
-    end
-  except
-    Result.Free;
-    raise
-  end
+    Picture.LoadFromFile(Filename);
+    AwardImage.Assign(Picture.Bitmap);
+  finally
+    Picture.Free
+  end;
+  imAward.Picture.Bitmap:= ResampleBitmap(imAward.Height,imAward.Width);
 end;
 
-function TfmMain.ResampleBitmap(ABitmap: TBitmap; NewHeight, NewWidth: Integer): TBitmap;
+procedure TfmMain.ClearImage;
 begin
+  AwardImage.Clear;
+  imAward.Picture.Clear;
+end;
 
+function TfmMain.ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
+var
+  ARect: TRect;
+begin
+  Result:= TBitmap.Create;
+  try
+    Result.Assign(AwardImage);
+    if ((Result.Height > NewHeight) or (Result.Width > NewWidth)) then
+      begin
+        ARect.Left:= 0;
+        ARect.Top:= 0;
+        ARect.Right:= Result.Width;
+        ARect.Bottom:= Result.Height;
+        if Result.Width > NewWidth then
+          begin
+            ARect.Right := NewWidth;
+            ARect.Bottom := (ARect.Right * Result.Height) div Result.Width;
+          end;
+        if Result.Height > NewHeight then
+          begin
+            ARect.Bottom := Min(NewHeight,ARect.Bottom);
+            ARect.Right := (ARect.Bottom * Result.Width) div Result.Height;
+          end;
+          Result.Canvas.StretchDraw(ARect, Result) ;
+          Result.Width := ARect.Right;
+          Result.Height := ARect.Bottom;
+      end;
+  finally
+  end;
+end;
+
+procedure TfmMain.FormCreate(Sender: TObject);
+begin
+  AwardImage:= TBitmap.Create;
+end;
+
+procedure TfmMain.FormDestroy(Sender: TObject);
+begin
+  AwardImage.Free;
 end;
 
 procedure TfmMain.btCreateClick(Sender: TObject);
@@ -185,29 +226,6 @@ begin
     on E: Exception do
       ShowMessage(E.Message);
   end;
-end;
-
-procedure TfmMain.edImageFileButtonClick(Sender: TObject);
-begin
-  OpenPictureDialog.Execute;
-end;
-
-procedure TfmMain.edImageFileChange(Sender: TObject);
-begin
-  if FileExists(edImageFile.Text) then
-    LoadImageFile(edImageFile.Text)
-  else
-    imAward.Picture.Clear;
-end;
-
-procedure TfmMain.imAwardDblClick(Sender: TObject);
-begin
-  OpenPictureDialog.Execute;
-end;
-
-procedure TfmMain.OpenPictureDialogClose(Sender: TObject);
-begin
-  edImageFile.Text:= OpenPictureDialog.FileName;
 end;
 
 procedure TfmMain.btCloseClick(Sender: TObject);
@@ -253,17 +271,19 @@ begin
       ParValue:= mmPeople.Lines[(Count - edFirstNumber.Value) div ((edLastNumber.Value - edFirstNumber.Value + 1) div mmPeople.Lines.Count)];
 end;
 
-procedure TfmMain.frReportEnterRect(Memo: TStringList; View: TfrView);
+procedure TfmMain.frReportBeginDoc;
+var
+  AHeight, AWidth: Integer;
+  pic: TfrObject;
 begin
-  if Memo.Count > 0 then
-    if (Memo[0] = '[Image]') then
-      if (View is TfrPictureView) then
-        begin
-          (View as TfrPictureView).Stretched:=
-                 ((imAward.Picture.Height > (View as TfrPictureView).Height) or
-                  (imAward.Picture.Width > (View as TfrPictureView).Width));
-          (View as TfrPictureView).Picture.Assign(imAward.Picture);
-        end;
+  pic:= frReport.FindObject('lrPicture');
+  if (pic is TfrPictureView) then
+    begin
+      (pic as TfrPictureView).Stretched:= False;
+      AHeight:= Trunc((pic as TfrPictureView).Height);
+      AWidth:=  Trunc((pic as TfrPictureView).Width);
+      (pic as TfrPictureView).Picture.Bitmap.Assign(ResampleBitmap(AHeight,AWidth));
+    end;
 end;
 
 procedure TfmMain.frUserDatasetCheckEOF(Sender: TObject; var Eof: Boolean);
@@ -282,45 +302,4 @@ begin
 end;
 
 end.
-
-{
-//resize algorithm
-
-const
-   maxWidth = 200;
-   maxHeight = 150;
- var
-   thumbnail : TBitmap;
-   thumbRect : TRect;
- begin
-   thumbnail := Form1.GetFormImage;    <- get a image
-   try
-     thumbRect.Left := 0;
-     thumbRect.Top := 0;
-
-     //proportional resize
-     if thumbnail.Width > thumbnail.Height then
-     begin
-       thumbRect.Right := maxWidth;
-       thumbRect.Bottom := (maxWidth * thumbnail.Height) div thumbnail.Width;
-     end
-     else
-     begin
-       thumbRect.Bottom := maxHeight;
-       thumbRect.Right := (maxHeight * thumbnail.Width) div thumbnail.Height;
-     end;
-
-     thumbnail.Canvas.StretchDraw(thumbRect, thumbnail) ;
-
-//resize image
-     thumbnail.Width := thumbRect.Right;
-    thumbnail.Height := thumbRect.Bottom;
-
-     //display in a TImage control
-     Image1.Picture.Assign(thumbnail) ;
-   finally
-     thumbnail.Free;
-   end;
- end;
-}
 
