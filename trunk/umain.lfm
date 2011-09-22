@@ -1,7 +1,7 @@
-object fmMain: TfmMain
-  Left = 492
+object MainForm: TMainForm
+  Left = 497
   Height = 636
-  Top = 169
+  Top = 184
   Width = 624
   Caption = '[dont translate]'
   ClientHeight = 636
@@ -50,11 +50,13 @@ object fmMain: TfmMain
         Width = 210
         Anchors = [akTop, akLeft, akRight]
         EditLabel.AnchorSideLeft.Control = edPlace
+        EditLabel.AnchorSideRight.Control = edPlace
+        EditLabel.AnchorSideRight.Side = asrBottom
         EditLabel.AnchorSideBottom.Control = edPlace
         EditLabel.Left = 12
         EditLabel.Height = 18
         EditLabel.Top = 66
-        EditLabel.Width = 41
+        EditLabel.Width = 210
         EditLabel.Caption = 'Local:'
         EditLabel.ParentColor = False
         TabOrder = 1
@@ -136,11 +138,13 @@ object fmMain: TfmMain
         Top = 31
         Width = 264
         EditLabel.AnchorSideLeft.Control = edAward
+        EditLabel.AnchorSideRight.Control = edAward
+        EditLabel.AnchorSideRight.Side = asrBottom
         EditLabel.AnchorSideBottom.Control = edAward
         EditLabel.Left = 12
         EditLabel.Height = 18
         EditLabel.Top = 10
-        EditLabel.Width = 54
+        EditLabel.Width = 264
         EditLabel.Caption = 'Prêmio:'
         EditLabel.ParentColor = False
         TabOrder = 0
@@ -304,16 +308,18 @@ object fmMain: TfmMain
       Width = 524
       Anchors = [akTop, akLeft, akRight]
       EditLabel.AnchorSideLeft.Control = edTitle
+      EditLabel.AnchorSideRight.Control = edTitle
+      EditLabel.AnchorSideRight.Side = asrBottom
       EditLabel.AnchorSideBottom.Control = edTitle
       EditLabel.Left = 30
       EditLabel.Height = 18
       EditLabel.Top = 17
-      EditLabel.Width = 40
+      EditLabel.Width = 524
       EditLabel.Caption = 'Título'
       EditLabel.ParentColor = False
       TabOrder = 0
     end
-    object gbPeople: TGroupBox
+    object gbNames: TGroupBox
       Left = 326
       Height = 276
       Top = 254

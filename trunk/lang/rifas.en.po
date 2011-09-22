@@ -11,11 +11,43 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 
+#: TABOUTDIALOG.BTLICENSE.CAPTION
+msgctxt "TABOUTDIALOG.BTLICENSE.CAPTION"
+msgid "Licença..."
+msgstr "License..."
+
+#: TABOUTDIALOG.BTOK.CAPTION
+msgctxt "TABOUTDIALOG.BTOK.CAPTION"
+msgid "Fechar"
+msgstr "Close"
+
+#: TABOUTDIALOG.CAPTION
+msgctxt "TABOUTDIALOG.CAPTION"
+msgid "[dont translate]"
+msgstr ""
+
+#: TABOUTDIALOG.LBCOPYRIGHT.CAPTION
+msgctxt "TABOUTDIALOG.LBCOPYRIGHT.CAPTION"
+msgid "[dont translate]"
+msgstr ""
+
+#: TABOUTDIALOG.LBHOMEPAGE.CAPTION
+msgctxt "TABOUTDIALOG.LBHOMEPAGE.CAPTION"
+msgid "[dont translate]"
+msgstr ""
+
+#: TABOUTDIALOG.LBTITLE.CAPTION
+msgctxt "TABOUTDIALOG.LBTITLE.CAPTION"
+msgid "[dont translate]"
+msgstr ""
+
 #: TFMABOUT.BTLICENSE.CAPTION
+msgctxt "TFMABOUT.BTLICENSE.CAPTION"
 msgid "Licença..."
 msgstr "License..."
 
 #: TFMABOUT.BTOK.CAPTION
+msgctxt "TFMABOUT.BTOK.CAPTION"
 msgid "Fechar"
 msgstr "Close"
 
@@ -40,14 +72,17 @@ msgid "[dont translate]"
 msgstr ""
 
 #: TFMMAIN.BTABOUT.CAPTION
+msgctxt "TFMMAIN.BTABOUT.CAPTION"
 msgid "Sobre..."
 msgstr "About..."
 
 #: TFMMAIN.BTCLOSE.CAPTION
+msgctxt "TFMMAIN.BTCLOSE.CAPTION"
 msgid "Sair"
 msgstr "Exit"
 
 #: TFMMAIN.BTCREATE.CAPTION
+msgctxt "TFMMAIN.BTCREATE.CAPTION"
 msgid "Gerar..."
 msgstr "Generate..."
 
@@ -57,60 +92,164 @@ msgid "[dont translate]"
 msgstr ""
 
 #: TFMMAIN.EDAWARD.EDITLABEL.CAPTION
+msgctxt "TFMMAIN.EDAWARD.EDITLABEL.CAPTION"
 msgid "Prêmio:"
 msgstr "Award:"
 
 #: TFMMAIN.EDDATE.CANCELCAPTION
+msgctxt "TFMMAIN.EDDATE.CANCELCAPTION"
 msgid "Cancel"
 msgstr "Cancel"
 
 #: TFMMAIN.EDDATE.OKCAPTION
+msgctxt "TFMMAIN.EDDATE.OKCAPTION"
 msgid "OK"
 msgstr "OK"
 
 #: TFMMAIN.EDPLACE.EDITLABEL.CAPTION
+msgctxt "TFMMAIN.EDPLACE.EDITLABEL.CAPTION"
 msgid "Local:"
 msgstr "Place:"
 
 #: TFMMAIN.EDTITLE.EDITLABEL.CAPTION
-#, fuzzy
 #| msgid "Título [teste1]"
+msgctxt "TFMMAIN.EDTITLE.EDITLABEL.CAPTION"
 msgid "Título"
 msgstr "Title"
 
 #: TFMMAIN.GBAWARD.CAPTION
+msgctxt "TFMMAIN.GBAWARD.CAPTION"
 msgid " Prêmio  "
 msgstr "Award"
 
 #: TFMMAIN.GBPEOPLE.CAPTION
+msgctxt "TFMMAIN.GBPEOPLE.CAPTION"
 msgid " Responsáveis  "
 msgstr " People  "
 
 #: TFMMAIN.GBRAFFLE.CAPTION
+msgctxt "TFMMAIN.GBRAFFLE.CAPTION"
 msgid " Sorteio  "
 msgstr " Raffle  "
 
 #: TFMMAIN.GBTICKETS.CAPTION
+msgctxt "TFMMAIN.GBTICKETS.CAPTION"
 msgid " Rifas  "
 msgstr " Tickets  "
 
 #: TFMMAIN.LBDATE.CAPTION
+msgctxt "TFMMAIN.LBDATE.CAPTION"
 msgid "Data:"
 msgstr "Date:"
 
 #: TFMMAIN.LBFIRSTNUMBER.CAPTION
+msgctxt "TFMMAIN.LBFIRSTNUMBER.CAPTION"
 msgid "Primeiro Número:"
 msgstr "First Number:"
 
 #: TFMMAIN.LBIMAGE.CAPTION
+msgctxt "TFMMAIN.LBIMAGE.CAPTION"
 msgid "Imagem:"
 msgstr "Image:"
 
 #: TFMMAIN.LBLASTNUMBER.CAPTION
+msgctxt "TFMMAIN.LBLASTNUMBER.CAPTION"
 msgid "Último Número:"
 msgstr "Last Number:"
 
 #: TFMMAIN.LBPRICE.CAPTION
+msgctxt "TFMMAIN.LBPRICE.CAPTION"
+msgid "Valor:"
+msgstr "Price:"
+
+#: TMAINFORM.BTABOUT.CAPTION
+msgctxt "TMAINFORM.BTABOUT.CAPTION"
+msgid "Sobre..."
+msgstr "About..."
+
+#: TMAINFORM.BTCLOSE.CAPTION
+msgctxt "TMAINFORM.BTCLOSE.CAPTION"
+msgid "Sair"
+msgstr "Exit"
+
+#: TMAINFORM.BTCREATE.CAPTION
+msgctxt "TMAINFORM.BTCREATE.CAPTION"
+msgid "Gerar..."
+msgstr "Generate..."
+
+#: TMAINFORM.CAPTION
+msgctxt "TMAINFORM.CAPTION"
+msgid "[dont translate]"
+msgstr ""
+
+#: TMAINFORM.EDAWARD.EDITLABEL.CAPTION
+msgctxt "TMAINFORM.EDAWARD.EDITLABEL.CAPTION"
+msgid "Prêmio:"
+msgstr "Award:"
+
+#: TMAINFORM.EDDATE.CANCELCAPTION
+msgctxt "TMAINFORM.EDDATE.CANCELCAPTION"
+msgid "Cancel"
+msgstr "Cancel"
+
+#: TMAINFORM.EDDATE.OKCAPTION
+msgctxt "TMAINFORM.EDDATE.OKCAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TMAINFORM.EDPLACE.EDITLABEL.CAPTION
+msgctxt "TMAINFORM.EDPLACE.EDITLABEL.CAPTION"
+msgid "Local:"
+msgstr "Place:"
+
+#: TMAINFORM.EDTITLE.EDITLABEL.CAPTION
+#| msgid "Título [teste1]"
+msgctxt "TMAINFORM.EDTITLE.EDITLABEL.CAPTION"
+msgid "Título"
+msgstr "Title"
+
+#: TMAINFORM.GBAWARD.CAPTION
+msgctxt "TMAINFORM.GBAWARD.CAPTION"
+msgid " Prêmio  "
+msgstr "Award"
+
+#: TMAINFORM.GBNAMES.CAPTION
+msgctxt "TMAINFORM.GBNAMES.CAPTION"
+msgid " Responsáveis  "
+msgstr " People  "
+
+#: TMAINFORM.GBRAFFLE.CAPTION
+msgctxt "TMAINFORM.GBRAFFLE.CAPTION"
+msgid " Sorteio  "
+msgstr " Raffle  "
+
+#: TMAINFORM.GBTICKETS.CAPTION
+msgctxt "TMAINFORM.GBTICKETS.CAPTION"
+msgid " Rifas  "
+msgstr " Tickets  "
+
+#: TMAINFORM.LBDATE.CAPTION
+msgctxt "TMAINFORM.LBDATE.CAPTION"
+msgid "Data:"
+msgstr "Date:"
+
+#: TMAINFORM.LBFIRSTNUMBER.CAPTION
+msgctxt "TMAINFORM.LBFIRSTNUMBER.CAPTION"
+msgid "Primeiro Número:"
+msgstr "First Number:"
+
+#: TMAINFORM.LBIMAGE.CAPTION
+msgctxt "TMAINFORM.LBIMAGE.CAPTION"
+msgid "Imagem:"
+msgstr "Image:"
+
+#: TMAINFORM.LBLASTNUMBER.CAPTION
+msgctxt "TMAINFORM.LBLASTNUMBER.CAPTION"
+msgid "Último Número:"
+msgstr "Last Number:"
+
+#: TMAINFORM.LBPRICE.CAPTION
+msgctxt "TMAINFORM.LBPRICE.CAPTION"
 msgid "Valor:"
 msgstr "Price:"
 
@@ -132,15 +271,15 @@ msgstr "Date"
 
 #: ustrings.slicenseintro
 msgid "Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation; tanto a versão 3 da Licença como (a seu critério) qualquer versão posterior."
-msgstr "Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation; tanto a versão 3 da Licença como (a seu critério) qualquer versão posterior."
+msgstr "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
 
 #: ustrings.snamecaption
 msgid "Nome"
-msgstr ""
+msgstr "Name"
 
 #: ustrings.sphonecaption
 msgid "Tel"
-msgstr ""
+msgstr "Phone"
 
 #: ustrings.splacecaption
 msgid "Local"

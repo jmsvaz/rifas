@@ -28,9 +28,9 @@ uses
 
 type
 
-  { TfmMain }
+  { TMainForm }
 
-TfmMain = class(TForm)
+TMainForm = class(TForm)
     btCreate: TButton;
     btAbout: TButton;
     btClose: TButton;
@@ -46,7 +46,7 @@ TfmMain = class(TForm)
     gbMain: TGroupBox;
     gbAward: TGroupBox;
     gbTickets: TGroupBox;
-    gbPeople: TGroupBox;
+    gbNames: TGroupBox;
     edTitle: TLabeledEdit;
     imAward: TImage;
     lbLastNumber: TLabel;
@@ -95,7 +95,7 @@ TfmMain = class(TForm)
   end; 
 
 var
-  fmMain: TfmMain;
+  MainForm: TMainForm;
 
 implementation
 
@@ -103,49 +103,48 @@ uses Math, uStrings, uAbout;
 
 {$R *.lfm}
 
-{ TfmMain }
+{ TMainForm }
 
-
-procedure TfmMain.FormShow(Sender: TObject);
+procedure TMainForm.FormShow(Sender: TObject);
 begin
   Caption:= Application.Title;
 end;
 
-procedure TfmMain.TestIfAwardIsValid;
+procedure TMainForm.TestIfAwardIsValid;
 begin
   if Length(edAward.Text) <= 0 then
     raise Exception.Create(sAwardCantBeBlank);
 end;
 
-procedure TfmMain.TestIfTicketNumbersAreValid;
+procedure TMainForm.TestIfTicketNumbersAreValid;
 begin
   if edLastNumber.Value < edFirstNumber.Value then
     raise Exception.Create(sTicketNumbersInvalid);
 end;
 
-procedure TfmMain.TestIfTicketsQuantityIsMultiple;
+procedure TMainForm.TestIfTicketsQuantityIsMultiple;
 begin
   if ((edLastNumber.Value - edFirstNumber.Value + 1) mod mmPeople.Lines.Count) > 0 then
     raise Exception.Create(sTicketsQuantityNotMultiple);
 end;
 
-procedure TfmMain.imAwardDblClick(Sender: TObject);
+procedure TMainForm.imAwardDblClick(Sender: TObject);
 begin
   OpenPictureDialog.Execute;
 end;
 
-procedure TfmMain.edImageFileButtonClick(Sender: TObject);
+procedure TMainForm.edImageFileButtonClick(Sender: TObject);
 begin
   OpenPictureDialog.Execute;
 end;
 
-procedure TfmMain.OpenPictureDialogClose(Sender: TObject);
+procedure TMainForm.OpenPictureDialogClose(Sender: TObject);
 begin
   edImageFile.Text:= OpenPictureDialog.FileName;
 end;
 
 
-procedure TfmMain.edImageFileChange(Sender: TObject);
+procedure TMainForm.edImageFileChange(Sender: TObject);
 begin
   if FileExists(edImageFile.Text) then
     LoadImageFile(edImageFile.Text)
@@ -153,7 +152,7 @@ begin
     ClearImage;
 end;
 
-procedure TfmMain.LoadImageFile(FileName: string);
+procedure TMainForm.LoadImageFile(FileName: string);
 var
   Picture: TPicture;
 begin
@@ -167,13 +166,13 @@ begin
   imAward.Picture.Bitmap:= ResampleBitmap(imAward.Height,imAward.Width);
 end;
 
-procedure TfmMain.ClearImage;
+procedure TMainForm.ClearImage;
 begin
   AwardImage.Clear;
   imAward.Picture.Clear;
 end;
 
-function TfmMain.ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
+function TMainForm.ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
 var
   ARect: TRect;
 begin
@@ -204,17 +203,17 @@ begin
   end;
 end;
 
-procedure TfmMain.FormCreate(Sender: TObject);
+procedure TMainForm.FormCreate(Sender: TObject);
 begin
   AwardImage:= TBitmap.Create;
 end;
 
-procedure TfmMain.FormDestroy(Sender: TObject);
+procedure TMainForm.FormDestroy(Sender: TObject);
 begin
   AwardImage.Free;
 end;
 
-procedure TfmMain.btCreateClick(Sender: TObject);
+procedure TMainForm.btCreateClick(Sender: TObject);
 begin
   try
     TestIfAwardIsValid;
@@ -228,17 +227,17 @@ begin
   end;
 end;
 
-procedure TfmMain.btCloseClick(Sender: TObject);
+procedure TMainForm.btCloseClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TfmMain.btAboutClick(Sender: TObject);
+procedure TMainForm.btAboutClick(Sender: TObject);
 begin
-  uAbout.fmAbout.ShowModal;
+  uAbout.AboutDialog.ShowModal;
 end;
 
-procedure TfmMain.Generate;
+procedure TMainForm.Generate;
 begin
   if frReport.PrepareReport then
     begin
@@ -247,7 +246,7 @@ begin
     end;
 end;
 
-procedure TfmMain.frReportGetValue(const ParName: String; var ParValue: Variant);
+procedure TMainForm.frReportGetValue(const ParName: String; var ParValue: Variant);
 begin
   if ParName = 'Name' then
     ParValue:= Format('%s:', [sNameCaption]);
@@ -264,14 +263,13 @@ begin
   if ParName = 'Number' then
     ParValue:= Format('%.*d', [Length(edLastNumber.Text), Count]) ;
   if ParName = 'Price' then
-    //ParValue:= Format('%s: %m', [sPriceCaption, edPrice.Value]);
     ParValue:= Format('%m', [edPrice.Value]);
   if mmPeople.Lines.Count > 0 then
     if ParName = 'Person' then
       ParValue:= mmPeople.Lines[(Count - edFirstNumber.Value) div ((edLastNumber.Value - edFirstNumber.Value + 1) div mmPeople.Lines.Count)];
 end;
 
-procedure TfmMain.frReportBeginDoc;
+procedure TMainForm.frReportBeginDoc;
 var
   AHeight, AWidth: Integer;
   pic: TfrObject;
@@ -286,17 +284,17 @@ begin
     end;
 end;
 
-procedure TfmMain.frUserDatasetCheckEOF(Sender: TObject; var Eof: Boolean);
+procedure TMainForm.frUserDatasetCheckEOF(Sender: TObject; var Eof: Boolean);
 begin
   Eof:= Count > edLastNumber.Value;
 end;
 
-procedure TfmMain.frUserDatasetFirst(Sender: TObject);
+procedure TMainForm.frUserDatasetFirst(Sender: TObject);
 begin
   Count:= edFirstNumber.Value;
 end;
 
-procedure TfmMain.frUserDatasetNext(Sender: TObject);
+procedure TMainForm.frUserDatasetNext(Sender: TObject);
 begin
   Inc(Count);
 end;

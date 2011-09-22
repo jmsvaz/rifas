@@ -33,8 +33,8 @@ begin
   Application.Title:='Rifas';
   RequireDerivedFormResource := True;
   Application.Initialize;
-  Application.CreateForm(TfmMain, fmMain);
-  Application.CreateForm(TfmAbout, fmAbout);
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TAboutDialog, AboutDialog);
   Application.Run;
 end.
 

@@ -28,9 +28,9 @@ uses
 
 type
 
-  { TfmAbout }
+  { TAboutDialog }
 
-TfmAbout = class(TForm)
+TAboutDialog = class(TForm)
     btOK: TButton;
     btLicense: TButton;
     imIcon: TImage;
@@ -56,7 +56,7 @@ procedure FormShow(Sender: TObject);
   end; 
 
 var
-  fmAbout: TfmAbout;
+  AboutDialog: TAboutDialog;
 
 implementation
 
@@ -64,9 +64,9 @@ uses LCLIntf, uStrings, VersionInfo;
 
 {$R *.lfm}
 
-{ TfmAbout }
+{ TAboutDialog }
 
-procedure TfmAbout.FormCreate(Sender: TObject);
+procedure TAboutDialog.FormCreate(Sender: TObject);
 var
   PI: TProductInfo;
 begin
@@ -82,7 +82,7 @@ begin
   end;
 end;
 
-procedure TfmAbout.FormShow(Sender: TObject);
+procedure TAboutDialog.FormShow(Sender: TObject);
 begin
   btLicense.Enabled:= FileExists(LicenseFile);
   Caption:= Format(sAboutDialogCaption,[Application.Title]);
@@ -96,17 +96,17 @@ begin
   mmInfo.Lines.Add(sAsIs);
 end;
 
-procedure TfmAbout.btLicenseClick(Sender: TObject);
+procedure TAboutDialog.btLicenseClick(Sender: TObject);
 begin
   OpenDocument(LicenseFile);
 end;
 
-procedure TfmAbout.lbHomepageClick(Sender: TObject);
+procedure TAboutDialog.lbHomepageClick(Sender: TObject);
 begin
   OpenURL(lbHomepage.Caption);
 end;
 
-procedure TfmAbout.lbTitleDblClick(Sender: TObject);
+procedure TAboutDialog.lbTitleDblClick(Sender: TObject);
 begin
   ShowMessage(Format(sProgramInfo,[lbTitle.Caption,Target,BuildDate,CompiledWith]));
 end;

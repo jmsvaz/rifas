@@ -41,6 +41,8 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
+              <GenerateDebugInfo Value="True"/>
+              <DebugInfoType Value="dsAuto"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
@@ -74,6 +76,8 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
+              <GenerateDebugInfo Value="True"/>
+              <DebugInfoType Value="dsAuto"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
@@ -107,6 +111,8 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
+              <GenerateDebugInfo Value="True"/>
+              <DebugInfoType Value="dsAuto"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
@@ -135,7 +141,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
-        <CommandLineParams Value="--lang pt_BR"/>
+        <CommandLineParams Value="--lang en"/>
         <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
@@ -146,11 +152,11 @@
       </Item1>
       <Item2>
         <PackageName Value="lazreport"/>
-        <MinVersion Minor="9" Release="8" Valid="True"/>
+        <MinVersion Minor="9" Valid="True" Release="8"/>
       </Item2>
       <Item3>
         <PackageName Value="LCLBase"/>
-        <MinVersion Major="1" Release="1" Valid="True"/>
+        <MinVersion Major="1" Valid="True" Release="1"/>
       </Item3>
       <Item4>
         <PackageName Value="LCL"/>
@@ -165,14 +171,14 @@
       <Unit1>
         <Filename Value="umain.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="fmMain"/>
+        <ComponentName Value="MainForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMain"/>
       </Unit1>
       <Unit2>
         <Filename Value="uabout.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="fmAbout"/>
+        <ComponentName Value="AboutDialog"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uAbout"/>
       </Unit2>
@@ -210,6 +216,8 @@
     </CodeGeneration>
     <Linking>
       <Debugging>
+        <GenerateDebugInfo Value="True"/>
+        <DebugInfoType Value="dsAuto"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>
@@ -230,7 +238,7 @@
     </Other>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="3">
+    <Exceptions Count="4">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -240,6 +248,9 @@
       <Item3>
         <Name Value="EFOpenError"/>
       </Item3>
+      <Item4>
+        <Name Value="Exception"/>
+      </Item4>
     </Exceptions>
   </Debugging>
 </CONFIG>
