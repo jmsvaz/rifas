@@ -39,8 +39,8 @@ TMainForm = class(TForm)
     edImageFile: TEditButton;
     edPlace: TLabeledEdit;
     edPrice: TFloatSpinEdit;
-    frReport: TfrReport;
     frPDFExport: TfrTNPDFExport;
+    frReport: TfrReport;
     frUserDataset: TfrUserDataset;
     gbRaffle: TGroupBox;
     gbMain: TGroupBox;
@@ -104,6 +104,38 @@ uses Math, uStrings, uAbout;
 {$R *.lfm}
 
 { TMainForm }
+
+
+function TMainForm.ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
+var
+  ARect: TRect;
+begin
+  Result:= TBitmap.Create;
+  try
+    Result.Assign(AwardImage);
+    if ((Result.Height > NewHeight) or (Result.Width > NewWidth)) then
+      begin
+        ARect.Left:= 0;
+        ARect.Top:= 0;
+        ARect.Right:= Result.Width;
+        ARect.Bottom:= Result.Height;
+        if Result.Width > NewWidth then
+          begin
+            ARect.Right := NewWidth;
+            ARect.Bottom := (ARect.Right * Result.Height) div Result.Width;
+          end;
+        if Result.Height > NewHeight then
+          begin
+            ARect.Bottom := Min(NewHeight,ARect.Bottom);
+            ARect.Right := (ARect.Bottom * Result.Width) div Result.Height;
+          end;
+          Result.Canvas.StretchDraw(ARect, Result) ;
+          Result.Width := ARect.Right;
+          Result.Height := ARect.Bottom;
+      end;
+  finally
+  end;
+end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
@@ -172,37 +204,6 @@ begin
   imAward.Picture.Clear;
 end;
 
-function TMainForm.ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
-var
-  ARect: TRect;
-begin
-  Result:= TBitmap.Create;
-  try
-    Result.Assign(AwardImage);
-    if ((Result.Height > NewHeight) or (Result.Width > NewWidth)) then
-      begin
-        ARect.Left:= 0;
-        ARect.Top:= 0;
-        ARect.Right:= Result.Width;
-        ARect.Bottom:= Result.Height;
-        if Result.Width > NewWidth then
-          begin
-            ARect.Right := NewWidth;
-            ARect.Bottom := (ARect.Right * Result.Height) div Result.Width;
-          end;
-        if Result.Height > NewHeight then
-          begin
-            ARect.Bottom := Min(NewHeight,ARect.Bottom);
-            ARect.Right := (ARect.Bottom * Result.Width) div Result.Height;
-          end;
-          Result.Canvas.StretchDraw(ARect, Result) ;
-          Result.Width := ARect.Right;
-          Result.Height := ARect.Bottom;
-      end;
-  finally
-  end;
-end;
-
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   AwardImage:= TBitmap.Create;
@@ -234,7 +235,12 @@ end;
 
 procedure TMainForm.btAboutClick(Sender: TObject);
 begin
-  uAbout.AboutDialog.ShowModal;
+  with TAboutDialog.Create(nil) do
+  try
+    ShowModal;
+  finally
+    Release;
+  end;
 end;
 
 procedure TMainForm.Generate;

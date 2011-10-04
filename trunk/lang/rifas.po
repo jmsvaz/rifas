@@ -255,6 +255,22 @@ msgctxt "TMAINFORM.LBPRICE.CAPTION"
 msgid "Valor:"
 msgstr "Valor:"
 
+#: TPREVIEWDIALOG.BTCLOSE.CAPTION
+msgid "btClose"
+msgstr ""
+
+#: TPREVIEWDIALOG.BTPRINT.CAPTION
+msgid "btPrint"
+msgstr ""
+
+#: TPREVIEWDIALOG.BTSAVE.CAPTION
+msgid "btSave"
+msgstr ""
+
+#: TPREVIEWDIALOG.CAPTION
+msgid "PreviewDialog"
+msgstr ""
+
 #: ustrings.saboutdialogcaption
 msgid "Sobre %s"
 msgstr "Sobre %s"

@@ -55,9 +55,6 @@ procedure FormShow(Sender: TObject);
     { public declarations }
   end; 
 
-var
-  AboutDialog: TAboutDialog;
-
 implementation
 
 uses LCLIntf, uStrings, VersionInfo;

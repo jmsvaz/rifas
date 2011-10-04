@@ -25,7 +25,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, lazreport, lazreportpdfexport, uMain, uAbout, uStrings, VersionInfo;
+  Forms, lazreport, printer4lazarus, lazreportpdfexport, uMain, uAbout,
+  uStrings, VersionInfo, PreviewFrm;
 
 {$R *.res}
 
@@ -34,7 +35,6 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
-  Application.CreateForm(TAboutDialog, AboutDialog);
   Application.Run;
 end.
 

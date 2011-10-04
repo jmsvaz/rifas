@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 497
+  Left = 339
   Height = 636
-  Top = 184
+  Top = 208
   Width = 624
   Caption = '[dont translate]'
   ClientHeight = 636
@@ -370,8 +370,8 @@ object MainForm: TMainForm
     DataType = dtDataSet
     OnBeginDoc = frReportBeginDoc
     OnGetValue = frReportGetValue
-    left = 232
-    top = 584
+    left = 248
+    top = 576
     ReportForm = {
       19000000C208000019000000000F0044656661756C74207072696E74657200FF
       0D00546672506167655265706F72740009000000340800009A0B000000000000
@@ -451,15 +451,15 @@ object MainForm: TMainForm
     OnFirst = frUserDatasetFirst
     OnNext = frUserDatasetNext
     left = 144
-    top = 584
-  end
-  object frPDFExport: TfrTNPDFExport
-    left = 176
-    top = 584
+    top = 576
   end
   object OpenPictureDialog: TOpenPictureDialog
     OnClose = OpenPictureDialogClose
-    left = 288
-    top = 584
+    left = 176
+    top = 240
+  end
+  object frPDFExport: TfrTNPDFExport
+    left = 192
+    top = 576
   end
 end
