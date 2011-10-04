@@ -179,11 +179,11 @@
         <UnitName Value="uMain"/>
       </Unit1>
       <Unit2>
-        <Filename Value="uabout.pas"/>
+        <Filename Value="aboutfrm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="AboutDialog"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uAbout"/>
+        <UnitName Value="AboutFrm"/>
       </Unit2>
       <Unit3>
         <Filename Value="ustrings.pas"/>

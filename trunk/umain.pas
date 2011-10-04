@@ -99,7 +99,7 @@ var
 
 implementation
 
-uses Math, uStrings, uAbout;
+uses Math, uStrings, AboutFrm;
 
 {$R *.lfm}
 
