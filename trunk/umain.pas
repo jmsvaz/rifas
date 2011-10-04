@@ -247,7 +247,10 @@ procedure TMainForm.Generate;
 begin
   if frReport.PrepareReport then
     begin
-      frReport.Title:= edTitle.Text;
+      if Length(edTitle.Text) > 0 then
+        frReport.Title:= edTitle.Text
+      else
+        frReport.Title:= Caption;
       frReport.ShowPreparedReport;
     end;
 end;
