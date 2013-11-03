@@ -83,7 +83,7 @@ type
 implementation
 
 uses
-   resource, versiontypes, lclversion, interfacebase;
+   resource, lclversion, interfacebase;
 
 function VersionInfoToStr(VI: TVersionInfo): String;
 begin

@@ -30,7 +30,7 @@
           <Macro1 Name="LCLWidgetType" Value="win32"/>
         </MacroValues>
         <CompilerOptions>
-          <Version Value="10"/>
+          <Version Value="11"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
             <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)"/>
@@ -41,8 +41,6 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <GenerateDebugInfo Value="True"/>
-              <DebugInfoType Value="dsAuto"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
@@ -58,6 +56,7 @@
             </CompilerMessages>
             <CompilerPath Value="$(CompPath)"/>
           </Other>
+          <LCLWidgetType Value="win32"/>
         </CompilerOptions>
       </Item2>
       <Item3 Name="Linux-QT">
@@ -65,7 +64,7 @@
           <Macro1 Name="LCLWidgetType" Value="qt"/>
         </MacroValues>
         <CompilerOptions>
-          <Version Value="10"/>
+          <Version Value="11"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
             <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)"/>
@@ -76,8 +75,6 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <GenerateDebugInfo Value="True"/>
-              <DebugInfoType Value="dsAuto"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
@@ -93,6 +90,7 @@
             </CompilerMessages>
             <CompilerPath Value="$(CompPath)"/>
           </Other>
+          <LCLWidgetType Value="qt"/>
         </CompilerOptions>
       </Item3>
       <Item4 Name="Win32-GTK2">
@@ -100,7 +98,7 @@
           <Macro1 Name="LCLWidgetType" Value="gtk2"/>
         </MacroValues>
         <CompilerOptions>
-          <Version Value="10"/>
+          <Version Value="11"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
             <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)"/>
@@ -111,8 +109,6 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <GenerateDebugInfo Value="True"/>
-              <DebugInfoType Value="dsAuto"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
@@ -128,6 +124,7 @@
             </CompilerMessages>
             <CompilerPath Value="$(CompPath)"/>
           </Other>
+          <LCLWidgetType Value="gtk2"/>
         </CompilerOptions>
       </Item4>
     </BuildModes>
@@ -155,17 +152,17 @@
       </Item2>
       <Item3>
         <PackageName Value="lazreport"/>
-        <MinVersion Minor="9" Valid="True" Release="8"/>
+        <MinVersion Minor="9" Release="8" Valid="True"/>
       </Item3>
       <Item4>
         <PackageName Value="LCLBase"/>
-        <MinVersion Major="1" Valid="True" Release="1"/>
+        <MinVersion Major="1" Release="1" Valid="True"/>
       </Item4>
       <Item5>
         <PackageName Value="LCL"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="6">
       <Unit0>
         <Filename Value="rifas.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -175,6 +172,7 @@
         <Filename Value="umain.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMain"/>
       </Unit1>
@@ -182,6 +180,7 @@
         <Filename Value="aboutfrm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="AboutDialog"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutFrm"/>
       </Unit2>
@@ -199,17 +198,10 @@
         <Filename Value="license.txt"/>
         <IsPartOfProject Value="True"/>
       </Unit5>
-      <Unit6>
-        <Filename Value="previewfrm.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="PreviewDialog"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="PreviewFrm"/>
-      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)"/>
@@ -226,8 +218,6 @@
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <GenerateDebugInfo Value="True"/>
-        <DebugInfoType Value="dsAuto"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>
@@ -246,9 +236,10 @@
       </CompilerMessages>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
+    <LCLWidgetType Value="gtk2"/>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="4">
+    <Exceptions Count="5">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -261,6 +252,9 @@
       <Item4>
         <Name Value="Exception"/>
       </Item4>
+      <Item5>
+        <Name Value="FPImageException"/>
+      </Item5>
     </Exceptions>
   </Debugging>
 </CONFIG>

@@ -23,7 +23,7 @@ unit uMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Dialogs, StdCtrls, ExtCtrls, EditBtn, Spin, ExtDlgs,
+  Classes, SysUtils, Forms, Controls, Dialogs, StdCtrls, ExtCtrls, EditBtn, Spin, ExtDlgs,
   Graphics, LR_Class, LR_DSet, lr_e_pdf, DefaultTranslator;
 
 type
@@ -39,7 +39,6 @@ TMainForm = class(TForm)
     edImageFile: TEditButton;
     edPlace: TLabeledEdit;
     edPrice: TFloatSpinEdit;
-    frPDFExport: TfrTNPDFExport;
     frReport: TfrReport;
     frUserDataset: TfrUserDataset;
     gbRaffle: TGroupBox;
@@ -87,6 +86,8 @@ TMainForm = class(TForm)
     procedure TestIfTicketsQuantityIsMultiple;
     procedure LoadImageFile(FileName: string);
     function ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
+    function GetATmpFileName(ATitle: string): string;
+    function HasImage: Boolean;
     { private declarations }
   public
     { public declarations }
@@ -99,7 +100,7 @@ var
 
 implementation
 
-uses Math, uStrings, AboutFrm;
+uses Math, LCLIntf, uStrings, AboutFrm;
 
 {$R *.lfm}
 
@@ -135,6 +136,16 @@ begin
       end;
   finally
   end;
+end;
+
+function TMainForm.GetATmpFileName(ATitle: string): string;
+begin
+  Result:= IncludeTrailingPathDelimiter(GetTempDir) + ATitle +'.pdf';
+end;
+
+function TMainForm.HasImage: Boolean;
+begin
+  Result:= (AwardImage.Height > 0) and (AwardImage.Width > 0);
 end;
 
 procedure TMainForm.FormShow(Sender: TObject);
@@ -244,15 +255,27 @@ begin
 end;
 
 procedure TMainForm.Generate;
+var
+  TmpFileName: string;
 begin
-  if frReport.PrepareReport then
-    begin
-      if Length(edTitle.Text) > 0 then
-        frReport.Title:= edTitle.Text
-      else
-        frReport.Title:= Caption;
-      frReport.ShowPreparedReport;
-    end;
+  Screen.Cursor:= crHourGlass;
+  try
+    if frReport.PrepareReport then
+      begin
+        if Length(edTitle.Text) > 0 then
+          frReport.Title:= edTitle.Text
+        else
+          frReport.Title:= Caption;
+  //      frReport.ShowPreparedReport;
+        TmpFileName:= GetATmpFileName(frReport.Title);
+        frReport.ExportTo(TfrTNPDFExportFilter, TmpFileName);
+        if FileExists(TmpFileName) then
+          OpenDocument(TmpFileName);
+      end;
+  finally
+    Screen.Cursor:= crDefault;
+  end;
+
 end;
 
 procedure TMainForm.frReportGetValue(const ParName: String; var ParValue: Variant);
@@ -284,7 +307,7 @@ var
   pic: TfrObject;
 begin
   pic:= frReport.FindObject('lrPicture');
-  if (pic is TfrPictureView) then
+  if (pic is TfrPictureView) and HasImage then
     begin
       (pic as TfrPictureView).Stretched:= False;
       AHeight:= Trunc((pic as TfrPictureView).Height);

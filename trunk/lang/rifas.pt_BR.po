@@ -11,261 +11,261 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 
-#: TABOUTDIALOG.BTLICENSE.CAPTION
+#: taboutdialog.btlicense.caption
 msgctxt "TABOUTDIALOG.BTLICENSE.CAPTION"
 msgid "Licença..."
 msgstr "Licença..."
 
-#: TABOUTDIALOG.BTOK.CAPTION
+#: taboutdialog.btok.caption
 msgctxt "TABOUTDIALOG.BTOK.CAPTION"
 msgid "Fechar"
 msgstr "Fechar"
 
-#: TABOUTDIALOG.CAPTION
+#: taboutdialog.caption
 msgctxt "TABOUTDIALOG.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TABOUTDIALOG.LBCOPYRIGHT.CAPTION
+#: taboutdialog.lbcopyright.caption
 msgctxt "TABOUTDIALOG.LBCOPYRIGHT.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TABOUTDIALOG.LBHOMEPAGE.CAPTION
+#: taboutdialog.lbhomepage.caption
 msgctxt "TABOUTDIALOG.LBHOMEPAGE.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TABOUTDIALOG.LBTITLE.CAPTION
+#: taboutdialog.lbtitle.caption
 msgctxt "TABOUTDIALOG.LBTITLE.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TFMABOUT.BTLICENSE.CAPTION
+#: tfmabout.btlicense.caption
 msgctxt "TFMABOUT.BTLICENSE.CAPTION"
 msgid "Licença..."
 msgstr "Licença..."
 
-#: TFMABOUT.BTOK.CAPTION
+#: tfmabout.btok.caption
 msgctxt "TFMABOUT.BTOK.CAPTION"
 msgid "Fechar"
 msgstr "Fechar"
 
-#: TFMABOUT.CAPTION
+#: tfmabout.caption
 msgctxt "TFMABOUT.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TFMABOUT.LBCOPYRIGHT.CAPTION
+#: tfmabout.lbcopyright.caption
 msgctxt "TFMABOUT.LBCOPYRIGHT.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TFMABOUT.LBHOMEPAGE.CAPTION
+#: tfmabout.lbhomepage.caption
 msgctxt "TFMABOUT.LBHOMEPAGE.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TFMABOUT.LBTITLE.CAPTION
+#: tfmabout.lbtitle.caption
 msgctxt "TFMABOUT.LBTITLE.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TFMMAIN.BTABOUT.CAPTION
+#: tfmmain.btabout.caption
 msgctxt "TFMMAIN.BTABOUT.CAPTION"
 msgid "Sobre..."
 msgstr "Sobre..."
 
-#: TFMMAIN.BTCLOSE.CAPTION
+#: tfmmain.btclose.caption
 msgctxt "TFMMAIN.BTCLOSE.CAPTION"
 msgid "Sair"
 msgstr "Sair"
 
-#: TFMMAIN.BTCREATE.CAPTION
+#: tfmmain.btcreate.caption
 msgctxt "TFMMAIN.BTCREATE.CAPTION"
 msgid "Gerar..."
 msgstr "Gerar..."
 
-#: TFMMAIN.CAPTION
+#: tfmmain.caption
 msgctxt "TFMMAIN.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TFMMAIN.EDAWARD.EDITLABEL.CAPTION
+#: tfmmain.edaward.editlabel.caption
 msgctxt "TFMMAIN.EDAWARD.EDITLABEL.CAPTION"
 msgid "Prêmio:"
 msgstr "Prêmio:"
 
-#: TFMMAIN.EDDATE.CANCELCAPTION
+#: tfmmain.eddate.cancelcaption
 msgctxt "TFMMAIN.EDDATE.CANCELCAPTION"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: TFMMAIN.EDDATE.OKCAPTION
+#: tfmmain.eddate.okcaption
 msgctxt "TFMMAIN.EDDATE.OKCAPTION"
 msgid "OK"
 msgstr "OK"
 
-#: TFMMAIN.EDPLACE.EDITLABEL.CAPTION
+#: tfmmain.edplace.editlabel.caption
 msgctxt "TFMMAIN.EDPLACE.EDITLABEL.CAPTION"
 msgid "Local:"
 msgstr "Local:"
 
-#: TFMMAIN.EDTITLE.EDITLABEL.CAPTION
+#: tfmmain.edtitle.editlabel.caption
 #| msgid "Título [teste1]"
 msgctxt "TFMMAIN.EDTITLE.EDITLABEL.CAPTION"
 msgid "Título"
 msgstr "Título"
 
-#: TFMMAIN.GBAWARD.CAPTION
+#: tfmmain.gbaward.caption
 msgctxt "TFMMAIN.GBAWARD.CAPTION"
 msgid " Prêmio  "
 msgstr " Prêmio  "
 
-#: TFMMAIN.GBPEOPLE.CAPTION
+#: tfmmain.gbpeople.caption
 msgctxt "TFMMAIN.GBPEOPLE.CAPTION"
 msgid " Responsáveis  "
 msgstr " Responsáveis  "
 
-#: TFMMAIN.GBRAFFLE.CAPTION
+#: tfmmain.gbraffle.caption
 msgctxt "TFMMAIN.GBRAFFLE.CAPTION"
 msgid " Sorteio  "
 msgstr " Sorteio  "
 
-#: TFMMAIN.GBTICKETS.CAPTION
+#: tfmmain.gbtickets.caption
 msgctxt "TFMMAIN.GBTICKETS.CAPTION"
 msgid " Rifas  "
 msgstr " Rifas  "
 
-#: TFMMAIN.LBDATE.CAPTION
+#: tfmmain.lbdate.caption
 msgctxt "TFMMAIN.LBDATE.CAPTION"
 msgid "Data:"
 msgstr "Data:"
 
-#: TFMMAIN.LBFIRSTNUMBER.CAPTION
+#: tfmmain.lbfirstnumber.caption
 msgctxt "TFMMAIN.LBFIRSTNUMBER.CAPTION"
 msgid "Primeiro Número:"
 msgstr "Primeiro Número:"
 
-#: TFMMAIN.LBIMAGE.CAPTION
+#: tfmmain.lbimage.caption
 msgctxt "TFMMAIN.LBIMAGE.CAPTION"
 msgid "Imagem:"
 msgstr "Imagem:"
 
-#: TFMMAIN.LBLASTNUMBER.CAPTION
+#: tfmmain.lblastnumber.caption
 msgctxt "TFMMAIN.LBLASTNUMBER.CAPTION"
 msgid "Último Número:"
 msgstr "Último Número:"
 
-#: TFMMAIN.LBPRICE.CAPTION
+#: tfmmain.lbprice.caption
 msgctxt "TFMMAIN.LBPRICE.CAPTION"
 msgid "Valor:"
 msgstr "Valor:"
 
-#: TMAINFORM.BTABOUT.CAPTION
+#: tmainform.btabout.caption
 msgctxt "TMAINFORM.BTABOUT.CAPTION"
 msgid "Sobre..."
 msgstr "Sobre..."
 
-#: TMAINFORM.BTCLOSE.CAPTION
+#: tmainform.btclose.caption
 msgctxt "TMAINFORM.BTCLOSE.CAPTION"
 msgid "Sair"
 msgstr "Sair"
 
-#: TMAINFORM.BTCREATE.CAPTION
+#: tmainform.btcreate.caption
 msgctxt "TMAINFORM.BTCREATE.CAPTION"
 msgid "Gerar..."
 msgstr "Gerar..."
 
-#: TMAINFORM.CAPTION
+#: tmainform.caption
 msgctxt "TMAINFORM.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: TMAINFORM.EDAWARD.EDITLABEL.CAPTION
+#: tmainform.edaward.editlabel.caption
 msgctxt "TMAINFORM.EDAWARD.EDITLABEL.CAPTION"
 msgid "Prêmio:"
 msgstr "Prêmio:"
 
-#: TMAINFORM.EDDATE.CANCELCAPTION
+#: tmainform.eddate.cancelcaption
 msgctxt "TMAINFORM.EDDATE.CANCELCAPTION"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: TMAINFORM.EDDATE.OKCAPTION
+#: tmainform.eddate.okcaption
 msgctxt "TMAINFORM.EDDATE.OKCAPTION"
 msgid "OK"
 msgstr "OK"
 
-#: TMAINFORM.EDPLACE.EDITLABEL.CAPTION
+#: tmainform.edplace.editlabel.caption
 msgctxt "TMAINFORM.EDPLACE.EDITLABEL.CAPTION"
 msgid "Local:"
 msgstr "Local:"
 
-#: TMAINFORM.EDTITLE.EDITLABEL.CAPTION
+#: tmainform.edtitle.editlabel.caption
 #| msgid "Título [teste1]"
 msgctxt "TMAINFORM.EDTITLE.EDITLABEL.CAPTION"
 msgid "Título"
 msgstr "Título"
 
-#: TMAINFORM.GBAWARD.CAPTION
+#: tmainform.gbaward.caption
 msgctxt "TMAINFORM.GBAWARD.CAPTION"
 msgid " Prêmio  "
 msgstr " Prêmio  "
 
-#: TMAINFORM.GBNAMES.CAPTION
+#: tmainform.gbnames.caption
 msgctxt "TMAINFORM.GBNAMES.CAPTION"
 msgid " Responsáveis  "
 msgstr " Responsáveis  "
 
-#: TMAINFORM.GBRAFFLE.CAPTION
+#: tmainform.gbraffle.caption
 msgctxt "TMAINFORM.GBRAFFLE.CAPTION"
 msgid " Sorteio  "
 msgstr " Sorteio  "
 
-#: TMAINFORM.GBTICKETS.CAPTION
+#: tmainform.gbtickets.caption
 msgctxt "TMAINFORM.GBTICKETS.CAPTION"
 msgid " Rifas  "
 msgstr " Rifas  "
 
-#: TMAINFORM.LBDATE.CAPTION
+#: tmainform.lbdate.caption
 msgctxt "TMAINFORM.LBDATE.CAPTION"
 msgid "Data:"
 msgstr "Data:"
 
-#: TMAINFORM.LBFIRSTNUMBER.CAPTION
+#: tmainform.lbfirstnumber.caption
 msgctxt "TMAINFORM.LBFIRSTNUMBER.CAPTION"
 msgid "Primeiro Número:"
 msgstr "Primeiro Número:"
 
-#: TMAINFORM.LBIMAGE.CAPTION
+#: tmainform.lbimage.caption
 msgctxt "TMAINFORM.LBIMAGE.CAPTION"
 msgid "Imagem:"
 msgstr "Imagem:"
 
-#: TMAINFORM.LBLASTNUMBER.CAPTION
+#: tmainform.lblastnumber.caption
 msgctxt "TMAINFORM.LBLASTNUMBER.CAPTION"
 msgid "Último Número:"
 msgstr "Último Número:"
 
-#: TMAINFORM.LBPRICE.CAPTION
+#: tmainform.lbprice.caption
 msgctxt "TMAINFORM.LBPRICE.CAPTION"
 msgid "Valor:"
 msgstr "Valor:"
 
-#: TPREVIEWDIALOG.BTCLOSE.CAPTION
+#: tpreviewdialog.btclose.caption
 msgid "btClose"
 msgstr ""
 
-#: TPREVIEWDIALOG.BTPRINT.CAPTION
+#: tpreviewdialog.btprint.caption
 msgid "btPrint"
 msgstr ""
 
-#: TPREVIEWDIALOG.BTSAVE.CAPTION
+#: tpreviewdialog.btsave.caption
 msgid "btSave"
 msgstr ""
 
-#: TPREVIEWDIALOG.CAPTION
+#: tpreviewdialog.caption
 msgid "PreviewDialog"
 msgstr ""
 

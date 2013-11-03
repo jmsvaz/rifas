@@ -1,7 +1,7 @@
 object MainForm: TMainForm
   Left = 339
   Height = 636
-  Top = 208
+  Top = 106
   Width = 624
   Caption = '[dont translate]'
   ClientHeight = 636
@@ -12,7 +12,7 @@ object MainForm: TMainForm
   OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '0.9.31'
+  LCLVersion = '1.0.12.0'
   Visible = True
   object btCreate: TButton
     Left = 377
@@ -40,12 +40,12 @@ object MainForm: TMainForm
       Width = 240
       Anchors = [akTop, akLeft, akRight]
       Caption = ' Sorteio  '
-      ClientHeight = 137
+      ClientHeight = 139
       ClientWidth = 236
       TabOrder = 2
       object edPlace: TLabeledEdit
         Left = 12
-        Height = 27
+        Height = 25
         Top = 87
         Width = 210
         Anchors = [akTop, akLeft, akRight]
@@ -54,8 +54,8 @@ object MainForm: TMainForm
         EditLabel.AnchorSideRight.Side = asrBottom
         EditLabel.AnchorSideBottom.Control = edPlace
         EditLabel.Left = 12
-        EditLabel.Height = 18
-        EditLabel.Top = 66
+        EditLabel.Height = 16
+        EditLabel.Top = 68
         EditLabel.Width = 210
         EditLabel.Caption = 'Local:'
         EditLabel.ParentColor = False
@@ -63,15 +63,15 @@ object MainForm: TMainForm
       end
       object lbDate: TLabel
         Left = 12
-        Height = 18
+        Height = 16
         Top = 6
-        Width = 37
+        Width = 36
         Caption = 'Data:'
         ParentColor = False
       end
       object edDate: TDateEdit
         Left = 12
-        Height = 27
+        Height = 25
         Top = 31
         Width = 181
         CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
@@ -129,12 +129,12 @@ object MainForm: TMainForm
       Top = 86
       Width = 297
       Caption = ' Prêmio  '
-      ClientHeight = 261
+      ClientHeight = 263
       ClientWidth = 293
       TabOrder = 1
       object edAward: TLabeledEdit
         Left = 12
-        Height = 27
+        Height = 25
         Top = 31
         Width = 264
         EditLabel.AnchorSideLeft.Control = edAward
@@ -142,8 +142,8 @@ object MainForm: TMainForm
         EditLabel.AnchorSideRight.Side = asrBottom
         EditLabel.AnchorSideBottom.Control = edAward
         EditLabel.Left = 12
-        EditLabel.Height = 18
-        EditLabel.Top = 10
+        EditLabel.Height = 16
+        EditLabel.Top = 12
         EditLabel.Width = 264
         EditLabel.Caption = 'Prêmio:'
         EditLabel.ParentColor = False
@@ -151,9 +151,9 @@ object MainForm: TMainForm
       end
       object lbImage: TLabel
         Left = 15
-        Height = 18
+        Height = 16
         Top = 71
-        Width = 59
+        Width = 58
         Caption = 'Imagem:'
         ParentColor = False
       end
@@ -184,7 +184,7 @@ object MainForm: TMainForm
       end
       object edImageFile: TEditButton
         Left = 12
-        Height = 27
+        Height = 25
         Top = 207
         Width = 239
         ButtonWidth = 23
@@ -239,12 +239,12 @@ object MainForm: TMainForm
       Width = 296
       Anchors = [akTop, akLeft, akBottom]
       Caption = ' Rifas  '
-      ClientHeight = 137
+      ClientHeight = 139
       ClientWidth = 292
       TabOrder = 3
       object edPrice: TFloatSpinEdit
         Left = 12
-        Height = 27
+        Height = 25
         Top = 30
         Width = 118
         Increment = 1
@@ -255,16 +255,16 @@ object MainForm: TMainForm
       end
       object lbPrice: TLabel
         Left = 15
-        Height = 18
+        Height = 16
         Top = 6
-        Width = 42
+        Width = 37
         Caption = 'Valor:'
         FocusControl = edPrice
         ParentColor = False
       end
       object edLastNumber: TSpinEdit
         Left = 150
-        Height = 27
+        Height = 25
         Top = 95
         Width = 126
         MaxValue = 100000000
@@ -274,7 +274,7 @@ object MainForm: TMainForm
       end
       object edFirstNumber: TSpinEdit
         Left = 12
-        Height = 27
+        Height = 25
         Top = 95
         Width = 126
         MaxValue = 100000000
@@ -284,18 +284,18 @@ object MainForm: TMainForm
       end
       object lbFirstNumber: TLabel
         Left = 15
-        Height = 18
+        Height = 16
         Top = 71
-        Width = 122
+        Width = 114
         Caption = 'Primeiro Número:'
         FocusControl = edFirstNumber
         ParentColor = False
       end
       object lbLastNumber: TLabel
         Left = 150
-        Height = 18
+        Height = 16
         Top = 71
-        Width = 109
+        Width = 103
         Caption = 'Último Número:'
         FocusControl = edLastNumber
         ParentColor = False
@@ -303,7 +303,7 @@ object MainForm: TMainForm
     end
     object edTitle: TLabeledEdit
       Left = 30
-      Height = 27
+      Height = 25
       Top = 38
       Width = 524
       Anchors = [akTop, akLeft, akRight]
@@ -312,8 +312,8 @@ object MainForm: TMainForm
       EditLabel.AnchorSideRight.Side = asrBottom
       EditLabel.AnchorSideBottom.Control = edTitle
       EditLabel.Left = 30
-      EditLabel.Height = 18
-      EditLabel.Top = 17
+      EditLabel.Height = 16
+      EditLabel.Top = 19
       EditLabel.Width = 524
       EditLabel.Caption = 'Título'
       EditLabel.ParentColor = False
@@ -326,12 +326,12 @@ object MainForm: TMainForm
       Width = 241
       Anchors = [akTop, akLeft, akRight, akBottom]
       Caption = ' Responsáveis  '
-      ClientHeight = 257
+      ClientHeight = 259
       ClientWidth = 237
       TabOrder = 4
       object mmPeople: TMemo
         Left = 12
-        Height = 223
+        Height = 225
         Top = 19
         Width = 211
         Anchors = [akTop, akLeft, akRight, akBottom]
@@ -366,85 +366,14 @@ object MainForm: TMainForm
     ModalPreview = False
     Options = []
     PreviewButtons = [pbZoom, pbSave, pbPrint, pbExit]
-    StoreInDFM = True
+    ShowProgress = False
+    StoreInForm = True
     DataType = dtDataSet
     OnBeginDoc = frReportBeginDoc
     OnGetValue = frReportGetValue
     left = 248
     top = 576
-    ReportForm = {
-      19000000C208000019000000000F0044656661756C74207072696E74657200FF
-      0D00546672506167655265706F72740009000000340800009A0B000000000000
-      000000000000000000000000000000FFFF010000000000000000000000000000
-      0002000B004D61737465724461746131000000000024000000F0020000C40000
-      0030000000803F000000000000000000000000FFFFFF1F000000000000000000
-      00000000010000000000050000000000000D0066725573657244617461736574
-      00000005004D656D6F320088000000C800000040000000120000000300000080
-      3F000000000F00000000000000FFFFFF1F2C020000000000010008005B4E756D
-      6265725D000000000100000000000F0068656C766574696361205B7572775D00
-      0A0000000000FF0000000000020000000000FFFFFF0000000002000000010000
-      0000000005004D656D6F3300E800000060000000D40000001200000003000000
-      803F000000000000000000000000FFFFFF1F2C020000000000010007005B506C
-      6163655D000000000100000000000F0068656C766574696361205B7572775D00
-      0A0000000000000000000000020000000000FFFFFF0000000000000000010000
-      0000000005004D656D6F340078020000C8000000580000001200000003000000
-      803F000000000F00000000000000FFFFFF1F2C020000000000010008005B4E75
-      6D6265725D000000000100000000000F0068656C766574696361205B7572775D
-      000A0000000000FF0000000000020000000000FFFFFF00000000020000000100
-      000000000005004D656D6F3500E800000084000000D400000012000000030000
-      00803F000000000000000000000000FFFFFF1F2C020000000000010006005B44
-      6174655D000000000100000000000F0068656C766574696361205B7572775D00
-      0A0000000000000000000000020000000000FFFFFF0000000000000000010000
-      0000000005004D656D6F3600E8000000BC0000008C0000001E00000003000000
-      803F000000000000000000000000FFFFFF1F2C020000000000010007005B5072
-      6963655D000000000100000000000F0068656C766574696361205B7572775D00
-      120000000000000000000000020000000000FFFFFF0000000000000000010000
-      0000010009006C725069637475726500C80100005C0000000801000060000000
-      06000000803F000000000000000000000000FFFFFF1F2C020000000000010007
-      005B496D6167655D00000000010000000000000000000093030000000005004D
-      656D6F31002000000038000000A80000004200000003000000803F0000000000
-      00000000000000FFFFFF1F2C020000000000010006005B4E616D655D00000000
-      0100000000000F0068656C766574696361205B7572775D000A00000000000000
-      00000000020000000000FFFFFF00000000000000000000000000000005004D65
-      6D6F3700E800000035000000D40000001600000003000000803F000000000000
-      000000000000FFFFFF1F2C020000000000010007005B5469746C655D00000000
-      0100000000000F0068656C766574696361205B7572775D000C00000002000000
-      00000000020000000000FFFFFF00000000000000000100000000040005004C69
-      6E653100D80000002400000000000000C4000000010000000040000000000100
-      000000000000FFFFFF1F2C020000000000000000000000010000000000040005
-      004C696E653200140000002400000000000000C4000000010000000040000000
-      000100000000000000FFFFFF1F2C020000000000000000000000010000000000
-      040005004C696E653300E00200002400000000000000C4000000010000000040
-      000000000100000000000000FFFFFF1F2C020000000000000000000000010000
-      000000040005004C696E65340080020000380100000000000000000000010000
-      000040000000000100000000000000FFFFFF1F2C020000000000000000000000
-      010000000000040005004C696E65350014000000240000000000000000000000
-      010000000040000000000100000000000000FFFFFF1F2C020000000000000000
-      000000010000000000040005004C696E6536001400000024000000CC02000000
-      000000010000000040000000000200000000000000FFFFFF1F2C020000000000
-      000000000000010000000000040005004C696E65370014000000E8000000CC02
-      000000000000010000000040000000000200000000000000FFFFFF1F2C020000
-      000000000000000000010000000000000005004D656D6F380020000000C80000
-      00600000001200000003000000803F000000000000000000000000FFFFFF1F2C
-      020000000000010008005B506572736F6E5D000000000100000000000F006865
-      6C766574696361205B7572775D000A0000000200000000000000020000000000
-      FFFFFF00000000000000000100000000000005004D656D6F3900C80100003400
-      0000080100002200000003000000803F000000000000000000000000FFFFFF1F
-      2C020000000000010007005B41776172645D000000000100000000000F006865
-      6C766574696361205B7572775D000A0000000200000000000000020000000000
-      FFFFFF00000000020000000000000000000006004D656D6F3130002000000088
-      000000A80000002E00000003000000803F000000000000000000000000FFFFFF
-      1F2C020000000000010007005B50686F6E655D000000000100000000000F0068
-      656C766574696361205B7572775D000A00000000000000000000000200000000
-      00FFFFFF00000000000000000000000000FE0800000000000000000000000000
-      04446174650000000000000000000005496D6167650000000000000000000006
-      4E756D6265720000000000000000000005506C61636500000000000000000000
-      055469746C650000000000000000000005417761726400000000000000000000
-      0550726963650000000000000000000006506572736F6E090005005269666173
-      0D0600205469746C650D06002041776172640D050020446174650D060020506C
-      6163650D06002050726963650D060020496D6167650D0700204E756D6265720D
-      070020506572736F6E00
-    }
+    ReportXML = '<?xml version="1.0" encoding="utf-8"?>'#10'<CONFIG>'#10'  <LazReport>'#10'    <Version Value="25"/>'#10'    <Title Value=""/>'#10'    <Subject Value=""/>'#10'    <KeyWords Value=""/>'#10'    <Comments Value=""/>'#10'    <ReportVersionBuild Value=""/>'#10'    <ReportVersionMajor Value=""/>'#10'    <ReportVersionMinor Value=""/>'#10'    <ReportVersionRelease Value=""/>'#10'    <ReportAutor Value=""/>'#10'    <Pages>'#10'      <PrintToDefault Value="False"/>'#10'      <DoublePass Value="False"/>'#10'      <SelectedPrinter Value="Default printer"/>'#10'      <PageCount Value="1"/>'#10'      <Page1>'#10'        <Name Value="Page1"/>'#10'        <ClassName Value="TfrPageReport"/>'#10'        <Visible Value="1"/>'#10'        <Width Value="2100"/>'#10'        <Height Value="2970" PageType="0"/>'#10'        <PgSize Value="9"/>'#10'        <Margins>'#10'          <left Value="0"/>'#10'          <Top Value="0"/>'#10'          <Right Value="0"/>'#10'          <Bottom Value="0"/>'#10'        </Margins>'#10'        <Orientation Value="poPortrait"/>'#10'        <UseMargins Value="True"/>'#10'        <PrintToPrevPage Value="False"/>'#10'        <ColCount Value="1"/>'#10'        <ColGap Value="0"/>'#10'        <LayoutOrder Value="loColumns"/>'#10'        <ObjectCount Value="19"/>'#10'        <Object1>'#10'          <Name Value="MasterData1"/>'#10'          <ClassName Value="TfrBandView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtBand"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="0"/>'#10'            <Top Value="36"/>'#10'            <Width Value="752"/>'#10'            <Height Value="196"/>'#10'          </Size>'#10'          <Flags Value="48"/>'#10'          <Data>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <BandType Value="btMasterData"/>'#10'          <Condition Value=""/>'#10'          <DatasetStr Value="frUserDataset"/>'#10'        </Object1>'#10'        <Object2>'#10'          <Name Value="Memo2"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="136"/>'#10'            <Top Value="200"/>'#10'            <Width Value="64"/>'#10'            <Height Value="18"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value="frbLeft,frbTop,frbRight,frbBottom"/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Number]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clRed"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taCenter"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object2>'#10'        <Object3>'#10'          <Name Value="Memo3"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="232"/>'#10'            <Top Value="96"/>'#10'            <Width Value="212"/>'#10'            <Height Value="18"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Place]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object3>'#10'        <Object4>'#10'          <Name Value="Memo4"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="632"/>'#10'            <Top Value="200"/>'#10'            <Width Value="88"/>'#10'            <Height Value="18"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value="frbLeft,frbTop,frbRight,frbBottom"/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Number]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clRed"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taCenter"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object4>'#10'        <Object5>'#10'          <Name Value="Memo5"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="232"/>'#10'            <Top Value="132"/>'#10'            <Width Value="212"/>'#10'            <Height Value="18"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Date]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object5>'#10'        <Object6>'#10'          <Name Value="Memo6"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="232"/>'#10'            <Top Value="188"/>'#10'            <Width Value="140"/>'#10'            <Height Value="30"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Price]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="18"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object6>'#10'        <Object7>'#10'          <Name Value="lrPicture"/>'#10'          <ClassName Value="TfrPictureView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtPicture"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="456"/>'#10'            <Top Value="92"/>'#10'            <Width Value="264"/>'#10'            <Height Value="96"/>'#10'          </Size>'#10'          <Flags Value="6"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Memo Value="[Image]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Picture>'#10'            <SharedName Value=""/>'#10'            <Type Value="0"/>'#10'          </Picture>'#10'        </Object7>'#10'        <Object8>'#10'          <Name Value="Memo1"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="32"/>'#10'            <Top Value="56"/>'#10'            <Width Value="168"/>'#10'            <Height Value="66"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Name]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlTop"/>'#10'          <Angle Value="0"/>'#10'        </Object8>'#10'        <Object9>'#10'          <Name Value="Memo7"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="232"/>'#10'            <Top Value="53"/>'#10'            <Width Value="212"/>'#10'            <Height Value="22"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Title]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="12"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value="fsBold"/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object9>'#10'        <Object10>'#10'          <Name Value="Line1"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="216"/>'#10'            <Top Value="36"/>'#10'            <Width Value="0"/>'#10'            <Height Value="196"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object10>'#10'        <Object11>'#10'          <Name Value="Line2"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="20"/>'#10'            <Top Value="36"/>'#10'            <Width Value="0"/>'#10'            <Height Value="196"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object11>'#10'        <Object12>'#10'          <Name Value="Line3"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="736"/>'#10'            <Top Value="36"/>'#10'            <Width Value="0"/>'#10'            <Height Value="196"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object12>'#10'        <Object13>'#10'          <Name Value="Line4"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="640"/>'#10'            <Top Value="312"/>'#10'            <Width Value="0"/>'#10'            <Height Value="0"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object13>'#10'        <Object14>'#10'          <Name Value="Line5"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="20"/>'#10'            <Top Value="36"/>'#10'            <Width Value="0"/>'#10'            <Height Value="0"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object14>'#10'        <Object15>'#10'          <Name Value="Line6"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="20"/>'#10'            <Top Value="36"/>'#10'            <Width Value="716"/>'#10'            <Height Value="0"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object15>'#10'        <Object16>'#10'          <Name Value="Line7"/>'#10'          <ClassName Value="TfrLineView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtLine"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="20"/>'#10'            <Top Value="232"/>'#10'            <Width Value="716"/>'#10'            <Height Value="0"/>'#10'          </Size>'#10'          <Flags Value="1"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="2"/>'#10'          </Frames>'#10'        </Object16>'#10'        <Object17>'#10'          <Name Value="Memo8"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="32"/>'#10'            <Top Value="200"/>'#10'            <Width Value="96"/>'#10'            <Height Value="18"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Person]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value="fsBold"/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlCenter"/>'#10'          <Angle Value="0"/>'#10'        </Object17>'#10'        <Object18>'#10'          <Name Value="Memo9"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="456"/>'#10'            <Top Value="52"/>'#10'            <Width Value="264"/>'#10'            <Height Value="34"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Award]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value="fsBold"/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taCenter"/>'#10'          <Layout Value="tlTop"/>'#10'          <Angle Value="0"/>'#10'        </Object18>'#10'        <Object19>'#10'          <Name Value="Memo10"/>'#10'          <ClassName Value="TfrMemoView"/>'#10'          <Visible Value="1"/>'#10'          <Typ Value="gtMemo"/>'#10'          <StreamMode Value="0"/>'#10'          <Size>'#10'            <Left Value="32"/>'#10'            <Top Value="136"/>'#10'            <Width Value="168"/>'#10'            <Height Value="46"/>'#10'          </Size>'#10'          <Flags Value="3"/>'#10'          <FillColor Value="clNone"/>'#10'          <Frames>'#10'            <FrameColor Value="clBlack"/>'#10'            <FrameStyle Value="frsSolid"/>'#10'            <FrameWidth Value="1"/>'#10'            <FrameBorders Value=""/>'#10'          </Frames>'#10'          <Data>'#10'            <Format Value="556"/>'#10'            <FormatStr Value=""/>'#10'            <Memo Value="[Phone]&#xA;"/>'#10'            <Script Value=""/>'#10'          </Data>'#10'          <Font>'#10'            <Name Value="helvetica [urw]"/>'#10'            <Size Value="10"/>'#10'            <Color Value="clBlack"/>'#10'            <Charset Value="0"/>'#10'            <Style Value=""/>'#10'          </Font>'#10'          <Highlight>'#10'            <FontStyle Value="2"/>'#10'            <FontColor Value="clBlack"/>'#10'            <FillColor Value="clWhite"/>'#10'            <HighlightStr Value=""/>'#10'          </Highlight>'#10'          <Alignment Value="taLeftJustify"/>'#10'          <Layout Value="tlTop"/>'#10'          <Angle Value="0"/>'#10'        </Object19>'#10'      </Page1>'#10'      <FVal>'#10'        <Count Value="8"/>'#10'        <Objects1>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Date"/>'#10'        </Objects1>'#10'        <Objects2>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Image"/>'#10'        </Objects2>'#10'        <Objects3>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Number"/>'#10'        </Objects3>'#10'        <Objects4>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Place"/>'#10'        </Objects4>'#10'        <Objects5>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Title"/>'#10'        </Objects5>'#10'        <Objects6>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Award"/>'#10'        </Objects6>'#10'        <Objects7>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Price"/>'#10'        </Objects7>'#10'        <Objects8>'#10'          <Typ Value="0"/>'#10'          <OtherKind Value="0"/>'#10'          <Dataset Value=""/>'#10'          <Field Value=""/>'#10'          <Item Value="Person"/>'#10'        </Objects8>'#10'      </FVal>'#10'      <ParentVars Value="Rifas&#xA; Title&#xA; Award&#xA; Date&#xA; Place&#xA; Price&#xA; Image&#xA; Number&#xA; Person&#xA;"/>'#10'    </Pages>'#10'  </LazReport>'#10'</CONFIG>'#10
   end
   object frUserDataset: TfrUserDataset
     OnCheckEOF = frUserDatasetCheckEOF
@@ -457,9 +386,5 @@ object MainForm: TMainForm
     OnClose = OpenPictureDialogClose
     left = 176
     top = 240
-  end
-  object frPDFExport: TfrTNPDFExport
-    left = 192
-    top = 576
   end
 end
