@@ -43,6 +43,10 @@ resourcestring
   sPlaceCaption = 'Local';
   sPriceCaption = 'Valor';
 
+const
+  sCopyright = 'Copyright © 2011,2013 João Marcelo S. Vaz';
+  sHomepage = 'http://rifas.sf.net/';
+
 implementation
 
 end.

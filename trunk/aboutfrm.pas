@@ -53,6 +53,7 @@ TAboutDialog = class(TForm)
       CompiledWith: string;
   public
     { public declarations }
+      class procedure ShowMe;
   end; 
 
 implementation
@@ -84,8 +85,8 @@ begin
   btLicense.Enabled:= FileExists(LicenseFile);
   Caption:= Format(sAboutDialogCaption,[Application.Title]);
   lbTitle.Caption:= Format('%s %s', [Application.Title, ApplicationVersion]);
-  lbCopyright.Caption:=  'Copyright © 2011,2013 João Marcelo S. Vaz';
-  lbHomepage.Caption:= 'http://rifas.sf.net/';
+  lbCopyright.Caption:=  sCopyright;
+  lbHomepage.Caption:= sHomepage;
   mmInfo.Lines.Clear;
   mmInfo.Lines.Add(sLicenseIntro);
   mmInfo.Lines.Add('');
@@ -105,6 +106,16 @@ end;
 procedure TAboutDialog.lbTitleDblClick(Sender: TObject);
 begin
   ShowMessage(Format(sProgramInfo,[lbTitle.Caption,Target,BuildDate,CompiledWith]));
+end;
+
+class procedure TAboutDialog.ShowMe;
+begin
+  with TAboutDialog.Create(nil) do
+    try
+      ShowModal;
+    finally
+      Release;
+    end;
 end;
 
 end.

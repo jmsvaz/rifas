@@ -88,6 +88,7 @@ TMainForm = class(TForm)
     function ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
     function GetATmpFileName(ATitle: string): string;
     function HasImage: Boolean;
+    function GetReportTitle: string;
     { private declarations }
   public
     { public declarations }
@@ -146,6 +147,14 @@ end;
 function TMainForm.HasImage: Boolean;
 begin
   Result:= (AwardImage.Height > 0) and (AwardImage.Width > 0);
+end;
+
+function TMainForm.GetReportTitle: string;
+begin
+  if Length(edTitle.Text) > 0 then
+    Result:= edTitle.Text
+  else
+    Result:= Caption;
 end;
 
 procedure TMainForm.FormShow(Sender: TObject);
@@ -246,12 +255,7 @@ end;
 
 procedure TMainForm.btAboutClick(Sender: TObject);
 begin
-  with TAboutDialog.Create(nil) do
-  try
-    ShowModal;
-  finally
-    Release;
-  end;
+  TAboutDialog.ShowMe;
 end;
 
 procedure TMainForm.Generate;
@@ -260,14 +264,10 @@ var
 begin
   Screen.Cursor:= crHourGlass;
   try
+    frReport.Title:= GetReportTitle;
+    TmpFileName:= GetATmpFileName(frReport.Title);
     if frReport.PrepareReport then
       begin
-        if Length(edTitle.Text) > 0 then
-          frReport.Title:= edTitle.Text
-        else
-          frReport.Title:= Caption;
-  //      frReport.ShowPreparedReport;
-        TmpFileName:= GetATmpFileName(frReport.Title);
         frReport.ExportTo(TfrTNPDFExportFilter, TmpFileName);
         if FileExists(TmpFileName) then
           OpenDocument(TmpFileName);
