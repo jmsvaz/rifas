@@ -173,6 +173,8 @@ msgid "Sair"
 msgstr "Sair"
 
 #: tmainform.btcreate.caption
+#, fuzzy
+#| msgid "Gerar... "
 msgctxt "TMAINFORM.BTCREATE.CAPTION"
 msgid "Gerar..."
 msgstr "Gerar..."

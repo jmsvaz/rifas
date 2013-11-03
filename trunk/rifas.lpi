@@ -169,12 +169,12 @@
         <UnitName Value="rifas"/>
       </Unit0>
       <Unit1>
-        <Filename Value="umain.pas"/>
+        <Filename Value="mainfrm.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uMain"/>
+        <UnitName Value="MainFrm"/>
       </Unit1>
       <Unit2>
         <Filename Value="aboutfrm.pas"/>

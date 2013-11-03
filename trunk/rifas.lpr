@@ -25,7 +25,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, lazreport, printer4lazarus, lazreportpdfexport, uMain, AboutFrm,
+  Forms, lazreport, printer4lazarus, lazreportpdfexport, MainFrm, AboutFrm,
   uStrings, VersionInfo;
 
 {$R *.res}
