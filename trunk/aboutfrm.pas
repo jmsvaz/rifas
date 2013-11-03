@@ -1,6 +1,6 @@
 {
 This file is part of Rifas - a raffle generator program.
-Copyright (C) 2011 João Marcelo S. Vaz
+Copyright (C) 2011,2013 João Marcelo S. Vaz
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ TAboutDialog = class(TForm)
     pnAboutBox: TPanel;
     procedure btLicenseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-procedure FormShow(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure lbHomepageClick(Sender: TObject);
     procedure lbTitleDblClick(Sender: TObject);
   private
@@ -84,9 +84,8 @@ begin
   btLicense.Enabled:= FileExists(LicenseFile);
   Caption:= Format(sAboutDialogCaption,[Application.Title]);
   lbTitle.Caption:= Format('%s %s', [Application.Title, ApplicationVersion]);
-//  imIcon.Picture.Assign(Application.Icon);
-  lbCopyright.Caption:=  'Copyright © 2011 João Marcelo S. Vaz';
-  lbHomepage.Caption:= 'http://rifas.sourceforge.net/';
+  lbCopyright.Caption:=  'Copyright © 2011,2013 João Marcelo S. Vaz';
+  lbHomepage.Caption:= 'http://rifas.sf.net/';
   mmInfo.Lines.Clear;
   mmInfo.Lines.Add(sLicenseIntro);
   mmInfo.Lines.Add('');
