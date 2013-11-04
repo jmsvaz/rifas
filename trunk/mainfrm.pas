@@ -63,6 +63,7 @@ TMainForm = class(TForm)
     edFirstNumber: TSpinEdit;
     OpenPictureDialog: TOpenPictureDialog;
     pnImage: TPanel;
+    SaveDialog: TSaveDialog;
     procedure btAboutClick(Sender: TObject);
     procedure btCloseClick(Sender: TObject);
     procedure btCreateClick(Sender: TObject);
@@ -78,6 +79,7 @@ TMainForm = class(TForm)
     procedure frUserDatasetNext(Sender: TObject);
     procedure imAwardDblClick(Sender: TObject);
     procedure OpenPictureDialogClose(Sender: TObject);
+    procedure SaveDialogShow(Sender: TObject);
   private
     AwardImage: TBitmap;
     procedure ClearImage;
@@ -86,7 +88,6 @@ TMainForm = class(TForm)
     procedure TestIfTicketsQuantityIsMultiple;
     procedure LoadImageFile(FileName: string);
     function ResampleBitmap(NewHeight, NewWidth: Integer): TBitmap;
-    function GetATmpFileName(ATitle: string): string;
     function HasImage: Boolean;
     function GetReportTitle: string;
     { private declarations }
@@ -139,11 +140,6 @@ begin
   end;
 end;
 
-function TMainForm.GetATmpFileName(ATitle: string): string;
-begin
-  Result:= IncludeTrailingPathDelimiter(GetTempDir) + ATitle +'.pdf';
-end;
-
 function TMainForm.HasImage: Boolean;
 begin
   Result:= (AwardImage.Height > 0) and (AwardImage.Width > 0);
@@ -193,6 +189,11 @@ end;
 procedure TMainForm.OpenPictureDialogClose(Sender: TObject);
 begin
   edImageFile.Text:= OpenPictureDialog.FileName;
+end;
+
+procedure TMainForm.SaveDialogShow(Sender: TObject);
+begin
+  SaveDialog.Filter := sPDFFile + ' (*.pdf)|*.pdf';
 end;
 
 
@@ -260,22 +261,23 @@ end;
 
 procedure TMainForm.Generate;
 var
-  TmpFileName: string;
+  AFileName: string;
 begin
-  Screen.Cursor:= crHourGlass;
-  try
-    frReport.Title:= GetReportTitle;
-    TmpFileName:= GetATmpFileName(frReport.Title);
-    if frReport.PrepareReport then
-      begin
-        frReport.ExportTo(TfrTNPDFExportFilter, TmpFileName);
-        if FileExists(TmpFileName) then
-          OpenDocument(TmpFileName);
+  SaveDialog.FileName:= '';
+  if SaveDialog.Execute then
+    begin
+      Screen.Cursor:= crHourGlass;
+      try
+        AFileName:= SaveDialog.FileName;
+        frReport.Title:= GetReportTitle;
+        if frReport.PrepareReport then
+          frReport.ExportTo(TfrTNPDFExportFilter, AFileName);
+      finally
+        Screen.Cursor:= crDefault;
       end;
-  finally
-    Screen.Cursor:= crDefault;
-  end;
-
+    end;
+  if FileExists(AFileName) then
+    OpenDocument(AFileName);
 end;
 
 procedure TMainForm.frReportGetValue(const ParName: String; var ParValue: Variant);

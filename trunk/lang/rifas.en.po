@@ -295,6 +295,10 @@ msgstr "This program is free software: you can redistribute it and/or modify it 
 msgid "Nome"
 msgstr "Name"
 
+#: ustrings.spdffile
+msgid "Documento PDF"
+msgstr ""
+
 #: ustrings.sphonecaption
 msgid "Tel"
 msgstr "Phone"

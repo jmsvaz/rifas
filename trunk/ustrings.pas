@@ -43,6 +43,8 @@ resourcestring
   sPlaceCaption = 'Local';
   sPriceCaption = 'Valor';
 
+  sPDFFile = 'Documento PDF';
+
 const
   sCopyright = 'Copyright © 2011,2013 João Marcelo S. Vaz';
   sHomepage = 'http://rifas.sf.net/';

@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 354
+  Left = 428
   Height = 636
-  Top = 92
+  Top = 106
   Width = 624
   Caption = '[dont translate]'
   ClientHeight = 636
@@ -386,5 +386,12 @@ object MainForm: TMainForm
     OnClose = OpenPictureDialogClose
     left = 176
     top = 240
+  end
+  object SaveDialog: TSaveDialog
+    OnShow = SaveDialogShow
+    DefaultExt = '.pdf'
+    Filter = 'PDF File (*.pdf)|*.pdf'
+    left = 296
+    top = 584
   end
 end
