@@ -20,14 +20,11 @@
       <Language Value="0416"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
-    <MacroValues Count="1">
-      <Macro1 Name="LCLWidgetType" Value="gtk2"/>
-    </MacroValues>
-    <BuildModes Count="4">
-      <Item1 Name="Linux-GTK2" Default="True"/>
-      <Item2 Name="Win32-Win32">
+    <BuildModes Count="5">
+      <Item1 Name="(default)" Default="True"/>
+      <Item2 Name="Linux-x86_64-GTK2">
         <MacroValues Count="1">
-          <Macro1 Name="LCLWidgetType" Value="win32"/>
+          <Macro1 Name="LCLWidgetType" Value="gtk2"/>
         </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
@@ -37,7 +34,14 @@
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
-            <TargetOS Value="win32"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="linux"/>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -51,15 +55,18 @@
             </Options>
           </Linking>
           <Other>
+            <Verbosity>
+              <ShoLineNum Value="True"/>
+            </Verbosity>
             <CompilerMessages>
               <UseMsgFile Value="True"/>
             </CompilerMessages>
             <CompilerPath Value="$(CompPath)"/>
           </Other>
-          <LCLWidgetType Value="win32"/>
+          <LCLWidgetType Value="gtk2"/>
         </CompilerOptions>
       </Item2>
-      <Item3 Name="Linux-QT">
+      <Item3 Name="Linux-x86_64-QT">
         <MacroValues Count="1">
           <Macro1 Name="LCLWidgetType" Value="qt"/>
         </MacroValues>
@@ -71,6 +78,7 @@
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="x86_64"/>
             <TargetOS Value="linux"/>
           </CodeGeneration>
           <Linking>
@@ -93,7 +101,42 @@
           <LCLWidgetType Value="qt"/>
         </CompilerOptions>
       </Item3>
-      <Item4 Name="Win32-GTK2">
+      <Item4 Name="Win32-Win32">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)/$(TargetOS)-$(LCLWidgetType)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <TargetOS Value="win32"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CompilerMessages>
+              <UseMsgFile Value="True"/>
+            </CompilerMessages>
+            <CompilerPath Value="$(CompPath)"/>
+          </Other>
+          <LCLWidgetType Value="win32"/>
+        </CompilerOptions>
+      </Item4>
+      <Item5 Name="Win32-GTK2">
         <MacroValues Count="1">
           <Macro1 Name="LCLWidgetType" Value="gtk2"/>
         </MacroValues>
@@ -105,6 +148,7 @@
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
             <TargetOS Value="win32"/>
           </CodeGeneration>
           <Linking>
@@ -126,7 +170,7 @@
           </Other>
           <LCLWidgetType Value="gtk2"/>
         </CompilerOptions>
-      </Item4>
+      </Item5>
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
@@ -214,7 +258,6 @@
         <OverflowChecks Value="True"/>
         <StackChecks Value="True"/>
       </Checks>
-      <TargetOS Value="linux"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
@@ -236,10 +279,9 @@
       </CompilerMessages>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
-    <LCLWidgetType Value="gtk2"/>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="5">
+    <Exceptions Count="6">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -255,6 +297,9 @@
       <Item5>
         <Name Value="FPImageException"/>
       </Item5>
+      <Item6>
+        <Name Value="EPrinter"/>
+      </Item6>
     </Exceptions>
   </Debugging>
 </CONFIG>

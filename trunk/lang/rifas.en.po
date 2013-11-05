@@ -136,14 +136,8 @@ msgid "Sobre %s"
 msgstr "About %s"
 
 #: ustrings.sasis
-msgid ""
-"Este programa é distribuído na expectativa de ser útil, mas SEM QUALQUER "
-"GARANTIA; incluindo as garantias implícitas de COMERCIALIZAÇÃO ou de "
-"ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR."
-msgstr ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE."
+msgid "Este programa é distribuído na expectativa de ser útil, mas SEM QUALQUER GARANTIA; incluindo as garantias implícitas de COMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR."
+msgstr "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
 
 #: ustrings.sawardcantbeblank
 msgid "O prêmio não pode ficar em branco!"
@@ -154,16 +148,8 @@ msgid "Data"
 msgstr "Date"
 
 #: ustrings.slicenseintro
-msgid ""
-"Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo "
-"sob os termos da Licença Pública Geral GNU, conforme publicada pela Free "
-"Software Foundation; tanto a versão 3 da Licença como (a seu critério) "
-"qualquer versão posterior."
-msgstr ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version."
+msgid "Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation; tanto a versão 3 da Licença como (a seu critério) qualquer versão posterior."
+msgstr "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
 
 #: ustrings.snamecaption
 msgid "Nome"
@@ -196,3 +182,4 @@ msgstr "The last ticket number cannot be lesser then the first!"
 #: ustrings.sticketsquantitynotmultiple
 msgid "A quantidade de rifas deve ser múltiplo da quantidade de responsáveis."
 msgstr "The ticket quantity should be multiple of the number of people."
+
