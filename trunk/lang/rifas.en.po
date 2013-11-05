@@ -4,12 +4,12 @@ msgstr ""
 "Project-Id-Version: Rifas\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Joao Marcelo S. Vaz <jmsvaz@gmail.com>\n"
+"Last-Translator: João Marcelo S. vaz <jmsvaz@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: BRAZIL\n"
+"Language: en\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: taboutdialog.btlicense.caption
 msgctxt "TABOUTDIALOG.BTLICENSE.CAPTION"
@@ -41,127 +41,6 @@ msgctxt "TABOUTDIALOG.LBTITLE.CAPTION"
 msgid "[dont translate]"
 msgstr ""
 
-#: tfmabout.btlicense.caption
-msgctxt "TFMABOUT.BTLICENSE.CAPTION"
-msgid "Licença..."
-msgstr "License..."
-
-#: tfmabout.btok.caption
-msgctxt "TFMABOUT.BTOK.CAPTION"
-msgid "Fechar"
-msgstr "Close"
-
-#: tfmabout.caption
-msgctxt "TFMABOUT.CAPTION"
-msgid "[dont translate]"
-msgstr ""
-
-#: tfmabout.lbcopyright.caption
-msgctxt "TFMABOUT.LBCOPYRIGHT.CAPTION"
-msgid "[dont translate]"
-msgstr ""
-
-#: tfmabout.lbhomepage.caption
-msgctxt "TFMABOUT.LBHOMEPAGE.CAPTION"
-msgid "[dont translate]"
-msgstr ""
-
-#: tfmabout.lbtitle.caption
-msgctxt "TFMABOUT.LBTITLE.CAPTION"
-msgid "[dont translate]"
-msgstr ""
-
-#: tfmmain.btabout.caption
-msgctxt "TFMMAIN.BTABOUT.CAPTION"
-msgid "Sobre..."
-msgstr "About..."
-
-#: tfmmain.btclose.caption
-msgctxt "TFMMAIN.BTCLOSE.CAPTION"
-msgid "Sair"
-msgstr "Exit"
-
-#: tfmmain.btcreate.caption
-msgctxt "TFMMAIN.BTCREATE.CAPTION"
-msgid "Gerar..."
-msgstr "Generate..."
-
-#: tfmmain.caption
-msgctxt "TFMMAIN.CAPTION"
-msgid "[dont translate]"
-msgstr ""
-
-#: tfmmain.edaward.editlabel.caption
-msgctxt "TFMMAIN.EDAWARD.EDITLABEL.CAPTION"
-msgid "Prêmio:"
-msgstr "Award:"
-
-#: tfmmain.eddate.cancelcaption
-msgctxt "TFMMAIN.EDDATE.CANCELCAPTION"
-msgid "Cancel"
-msgstr "Cancel"
-
-#: tfmmain.eddate.okcaption
-msgctxt "TFMMAIN.EDDATE.OKCAPTION"
-msgid "OK"
-msgstr "OK"
-
-#: tfmmain.edplace.editlabel.caption
-msgctxt "TFMMAIN.EDPLACE.EDITLABEL.CAPTION"
-msgid "Local:"
-msgstr "Place:"
-
-#: tfmmain.edtitle.editlabel.caption
-#| msgid "Título [teste1]"
-msgctxt "TFMMAIN.EDTITLE.EDITLABEL.CAPTION"
-msgid "Título"
-msgstr "Title"
-
-#: tfmmain.gbaward.caption
-msgctxt "TFMMAIN.GBAWARD.CAPTION"
-msgid " Prêmio  "
-msgstr "Award"
-
-#: tfmmain.gbpeople.caption
-msgctxt "TFMMAIN.GBPEOPLE.CAPTION"
-msgid " Responsáveis  "
-msgstr " People  "
-
-#: tfmmain.gbraffle.caption
-msgctxt "TFMMAIN.GBRAFFLE.CAPTION"
-msgid " Sorteio  "
-msgstr " Raffle  "
-
-#: tfmmain.gbtickets.caption
-msgctxt "TFMMAIN.GBTICKETS.CAPTION"
-msgid " Rifas  "
-msgstr " Tickets  "
-
-#: tfmmain.lbdate.caption
-msgctxt "TFMMAIN.LBDATE.CAPTION"
-msgid "Data:"
-msgstr "Date:"
-
-#: tfmmain.lbfirstnumber.caption
-msgctxt "TFMMAIN.LBFIRSTNUMBER.CAPTION"
-msgid "Primeiro Número:"
-msgstr "First Number:"
-
-#: tfmmain.lbimage.caption
-msgctxt "TFMMAIN.LBIMAGE.CAPTION"
-msgid "Imagem:"
-msgstr "Image:"
-
-#: tfmmain.lblastnumber.caption
-msgctxt "TFMMAIN.LBLASTNUMBER.CAPTION"
-msgid "Último Número:"
-msgstr "Last Number:"
-
-#: tfmmain.lbprice.caption
-msgctxt "TFMMAIN.LBPRICE.CAPTION"
-msgid "Valor:"
-msgstr "Price:"
-
 #: tmainform.btabout.caption
 msgctxt "TMAINFORM.BTABOUT.CAPTION"
 msgid "Sobre..."
@@ -173,8 +52,6 @@ msgid "Sair"
 msgstr "Exit"
 
 #: tmainform.btcreate.caption
-#, fuzzy
-#| msgid "Gerar... "
 msgctxt "TMAINFORM.BTCREATE.CAPTION"
 msgid "Gerar..."
 msgstr "Generate..."
@@ -205,7 +82,6 @@ msgid "Local:"
 msgstr "Place:"
 
 #: tmainform.edtitle.editlabel.caption
-#| msgid "Título [teste1]"
 msgctxt "TMAINFORM.EDTITLE.EDITLABEL.CAPTION"
 msgid "Título"
 msgstr "Title"
@@ -255,29 +131,19 @@ msgctxt "TMAINFORM.LBPRICE.CAPTION"
 msgid "Valor:"
 msgstr "Price:"
 
-#: tpreviewdialog.btclose.caption
-msgid "btClose"
-msgstr ""
-
-#: tpreviewdialog.btprint.caption
-msgid "btPrint"
-msgstr ""
-
-#: tpreviewdialog.btsave.caption
-msgid "btSave"
-msgstr ""
-
-#: tpreviewdialog.caption
-msgid "PreviewDialog"
-msgstr ""
-
 #: ustrings.saboutdialogcaption
 msgid "Sobre %s"
 msgstr "About %s"
 
 #: ustrings.sasis
-msgid "Este programa é distribuído na expectativa de ser útil, mas SEM QUALQUER GARANTIA; incluindo as garantias implícitas de COMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR."
-msgstr "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+msgid ""
+"Este programa é distribuído na expectativa de ser útil, mas SEM QUALQUER "
+"GARANTIA; incluindo as garantias implícitas de COMERCIALIZAÇÃO ou de "
+"ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR."
+msgstr ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE."
 
 #: ustrings.sawardcantbeblank
 msgid "O prêmio não pode ficar em branco!"
@@ -288,8 +154,16 @@ msgid "Data"
 msgstr "Date"
 
 #: ustrings.slicenseintro
-msgid "Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation; tanto a versão 3 da Licença como (a seu critério) qualquer versão posterior."
-msgstr "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
+msgid ""
+"Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo "
+"sob os termos da Licença Pública Geral GNU, conforme publicada pela Free "
+"Software Foundation; tanto a versão 3 da Licença como (a seu critério) "
+"qualquer versão posterior."
+msgstr ""
+"This program is free software: you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation, either version 3 of the License, or (at your option) "
+"any later version."
 
 #: ustrings.snamecaption
 msgid "Nome"
@@ -297,7 +171,7 @@ msgstr "Name"
 
 #: ustrings.spdffile
 msgid "Documento PDF"
-msgstr ""
+msgstr "PDF Document"
 
 #: ustrings.sphonecaption
 msgid "Tel"
@@ -321,5 +195,4 @@ msgstr "The last ticket number cannot be lesser then the first!"
 
 #: ustrings.sticketsquantitynotmultiple
 msgid "A quantidade de rifas deve ser múltiplo da quantidade de responsáveis."
-msgstr "The ticket quantity should be multiple of the numer of people."
-
+msgstr "The ticket quantity should be multiple of the number of people."

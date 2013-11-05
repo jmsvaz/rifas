@@ -1,5 +1,5 @@
 object MainForm: TMainForm
-  Left = 428
+  Left = 465
   Height = 636
   Top = 106
   Width = 624
