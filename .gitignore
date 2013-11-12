@@ -1,0 +1,16 @@
+*.*~
+*~
+*.bak
+*.bkp
+*.lps
+*.res
+*.o
+*.ppu
+*.or
+*.dbg
+*.compiled
+lib
+units
+docs
+backup
+!.gitignore
